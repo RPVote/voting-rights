@@ -19,8 +19,36 @@ What work has previously been done?
 
 **Stakeholders**
 
-Who are the important stakeholders and what has your team done to take them into consideration?
-What are the use cases you’re building for?
+The overall goal of this project is to develop a suite of tools that allow other
+practitioners to assess the presence of voter dilution using election results.
+Thus, beyond this team, the stakeholders most reliant on this project include:
+
+* <b>Matt and Loren</b>, who will continue the development of the package after
+  handoff.
+* The <b>New York Civil Liberties Union (NYCLU)</b>, which has committed to using the
+  package in-house after its successful usage in the recent East Ramapo case.
+  Within NYCLU, we are in contact with <b>Perry Grossman</b>, who was the lead attorney
+  in East Ramapo and is informing our development of the package according to
+  his team's needs.
+* <b>Data science practitioners</b> at NYCLU and other advocacy organizations who will
+  use the package to analyze data in their own litigation.
+
+Beyond these primary stakeholders, there are a host of other stakeholders whose
+viewpoints may influence the development of the project:
+* The visualizations produced by the package will eventually be reviewed by
+  <b>judges</b>, requiring that they effectively communicate the key ideas.
+* Other <b>advocacy groups</b>, such as the UCLA Voting Rights Project.
+* Other <b>academics</b> within the realm of political science who may use the package
+  for their own research questions.
+
+The ultimate beneficiary of this project of <b>voters in minority groups</b> who do not
+receive adequate representation in their local governments due to improper
+districting. These voters are often represented by <b>local community organizations</b>
+who advocate on their behalf, both within the realm of voting rights and beyond.
+While these stakeholders will likely not use the package, their role in pushing
+forward voting rights cases is instrumental. They both are the source of
+litigation (raising awareness of their voting rights issues) and provide
+narratives that substantiate and enrich the narrative quantified by the data.
 
 **Ethics**
 
