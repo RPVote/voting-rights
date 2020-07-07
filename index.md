@@ -8,8 +8,8 @@ layout: default
 # Detection of Vote Dilution: New tools and methods for protecting voting rights
 
 In this project, we developed tools to aid the detection of racial
-gerrymandering and voter dilution. These tools are necessary in current and
-future court cases to provide sufficient evidence of voter dilution in an
+gerrymandering and vote dilution. These tools are necessary in current and
+future court cases to provide sufficient evidence of vote dilution in an
 effort to require fairer redistricting. Thus, these tools must be properly
 vetted, providing accurate results, and usable beyond technical specialists, so
 that their utilization can expand.
@@ -21,8 +21,6 @@ that their utilization can expand.
 **Data Science Leads:** Scott Henderson and Spencer Wood
 
 **DSSG Fellows:** Juandalyn Burke, Ari Decter-Frain, Hikari Murayama, Pratik Sachdeva
-
-Ari Decter-Frain, Hikari Murayama, Juandalyn Burke, Pratik Sachdeva
 
 # Abstract or executive summary
 
