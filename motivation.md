@@ -14,8 +14,46 @@ This project develops tools for quantifying racially polarized voting in electio
 
 **Background**
 
-Why is this important?
-What work has previously been done?
+In the spring of 2020, the NAACP won a landmark voting rights case in the East Ramapo School District of Rockmount County, New York by convincing the judge that precinct boundaries drawn for school board elections substantially diluted the Black and Latino minority vote. Vote dilution violates Section 2 of the Voting Rights Act (VRA), which “prohibits drawing election districts in ways that improperly dilute minorities’ voting power.”
+
+Expert witnesses in the case used a wide array of novel data science methods to quantify vote dilution, and their victory cemented the validity of these tools in a legal setting and future voting rights litigation.
+
+In this DSSG project, we are improving upon and making the techniques they used accessible to everyone, so that groups and organizations throughout the country can fight for their electoral rights. 
+
+
+Without fair representation, minority citizens cannot effectively support and protect their own institutions such as education. In the East Ramapo case, lawyers from the New York Civil Liberties Union (NYCLU) explained how dilution of Black and Latino votes in school board elections led to the gradual siphoning of funds from public schools attended by Black and Latino students to private schools attended by white students. As a result, the educational experiences of public school attendees began to deteriorate:
+
+  * “The board eliminated hundreds of public school teaching, staff, and administrative positions and eliminated classes and programs”
+
+  * “Public school buildings fell into disrepair and custodial services were reduced”
+  * “Students were given academically deficient schedules full of free time and filler”
+  * “The board closed two public schools over minority opposition”
+  * “Graduation and test scores sank”
+
+To convince the judge that the defunding of public schools ultimately resulted from vote dilution, the plaintiffs’ evidence needed to pass the Gingles Test, established as precedent for assessing minority vote dilution in the 1986 case Thornburg v. Gingles. The Gingles test requires showing:
+
+  1. The group of minority voters is sufficiently large and geographically compact
+  2. Minority voters are politically cohesive in supporting their candidate of choice
+  3. The majority votes in a bloc to usually defeat the minority’s preferred candidate
+
+
+Voting dilution can be difficult to prove because voting is confidential - we can never know who voted for which candidate with certainty. However, new innovations in quantitative social science can now provide data-driven evidence to meet the requirements needed to pass the Gingles test.  These methods include ecological inference and Bayesian Improved Surname Geocoding (BISG). 
+
+
+Ecological inference (EI) takes aggregate and historical (ecological) data to infer individual behavior (King, 1997). BISG uses demographic data (i.e. surnames, racial identity, and geographic data) collected from the United States Census Bureau, along with, field-specific data like voter information to predict the race or ethnicity of each person in the sample population (Elliott et al. 2019). Current research further examines the methods of ecological inference and BISG through creating and updating existing software (built in R) that specifically calculates the probability of race or ethnicity for individuals and executes the process of EI for detecting voting dilution (Barreto et al. 2019, Collingwood et al. 2016).
+
+
+
+References:
+
+1. Barreto, M., Collingwood, L., Garcia-Rios, S., & Oskooii, K. A. (2019). Estimating Candidate Support in Voting Rights Act Cases: Comparing Iterative EI and EI-R× C Methods. Sociological Methods & Research, 0049124119852394.
+
+2. Collingwood, L., Oskooii, K., Garcia-Rios, S., & Barreto, M. (2016). eiCompare: Comparing Ecological Inference Estimates across EI and EI: RC. R J., 8(2), 92.
+
+3. Elliott, M. N., Morrison, P. A., Fremont, A., McCaffrey, D. F., Pantoja, P., & Lurie, N. (2009). Using the Census Bureau’s surname list to improve estimates of race/ethnicity and associated disparities. Health Services and Outcomes Research Methodology, 9(2), 69.
+
+4. King, G. (1997). A solution to the ecological inference problem: reconstructing individual behavior from aggregate data. Princeton: Princeton University Press.
+
 
 **Stakeholders**
 
