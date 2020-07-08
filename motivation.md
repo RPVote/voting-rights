@@ -20,7 +20,7 @@ Expert witnesses in the case used a wide array of novel data science methods to 
 
 In this DSSG project, we are improving upon and making the techniques they used accessible to everyone, so that groups and organizations throughout the country can fight for their electoral rights. 
 
-![Image 1. Decelle (2017) "Students of the East Ramapo School District hold a sign during the One Voice United Rally in Albany" [photo]. Retrieved July 7, 2020 from The Atlantic website: https://www.theatlantic.com/education/archive/2017/11/another-blow-to-one-of-americas-most-controversial-school-board/546227/ .](images/eastramapo_schooldistrict_rally_theatlantic.jpg)
+![Image 1. Decelle (2017) "Students of the East Ramapo School District hold a sign during the One Voice United Rally in Albany". Retrieved July 7, 2020 from The Atlantic website: https://www.theatlantic.com/education/archive/2017/11/another-blow-to-one-of-americas-most-controversial-school-board/546227/ .](images/eastramapo_schooldistrict_rally_theatlantic.jpg)
 
 Without fair representation, minority citizens cannot effectively support and protect their own institutions such as education. In the East Ramapo case, lawyers from the New York Civil Liberties Union (NYCLU) explained how dilution of Black and Latino votes in school board elections led to the gradual siphoning of funds from public schools attended by Black and Latino students to private schools attended by white students. As a result, the educational experiences of public school attendees began to deteriorate:
 
