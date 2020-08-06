@@ -2,27 +2,17 @@
 layout: page
 title: Motivation
 ---
+## Background
 
-**Questions**
+In the spring of 2020, the NAACP won a landmark voting rights case in the East Ramapo School District of Rockmount County, New York by convincing the judge that precinct boundaries drawn for school board elections substantially diluted the Black and Latino minority vote. Vote dilution violates Section 2 of the Voting Rights Act (VRA), which “prohibits drawing election districts in ways that improperly dilute minorities’ voting power.” During the case, expert witnesses Dr. Matt Barreto and Dr. Loren Collingwood, also the DSSG project leads, employed a wide array of novel data science methods to quantify vote dilution. Their victory cemented the validity of these tools in a legal setting and future voting rights litigation.
 
-This project develops tools for quantifying racially polarized voting in elections at all levels of the US government. Better measurement of racially polarized voting will empower organizations like the ACLU, NAACP, and thousands of local community groups to begin their own legal battles against vote dilution. To this end, we seek to answer the following questions:
-
-1. How can we manage the noise and missing data that propagates uncertainty throughout our estimates of racially polarized voting?
-2. How can we produce informative, comprehensible, and compelling visualizations of our results that can be used in court?
-3. How do we integrate or use other sources of data (i.e. twitter, newspapers, school data, housing information, etc.) to improve data-driven evidence?
-4. How do we ensure ethical consideration and practices while creating tools that use identifiable information?
-
-**Background**
-
-In the spring of 2020, the NAACP won a landmark voting rights case in the East Ramapo School District of Rockmount County, New York by convincing the judge that precinct boundaries drawn for school board elections substantially diluted the Black and Latino minority vote. Vote dilution violates Section 2 of the Voting Rights Act (VRA), which “prohibits drawing election districts in ways that improperly dilute minorities’ voting power.”
-
-Expert witnesses in the case used a wide array of novel data science methods to quantify vote dilution, and their victory cemented the validity of these tools in a legal setting and future voting rights litigation.
-
-In this DSSG project, we are improving upon and making the techniques they used accessible to everyone, so that groups and organizations throughout the country can fight for their electoral rights. 
+In this DSSG project, we build on Dr. Barreto and Dr. Collingwood's initial version of `eiCompare`, software in the form of an `R` package that enables anyone in the world to measure vote dilution using the same tools that were used in the East Ramapo case (Collingwood et al., 2016). The goal of this project is to expand the software's functionality, make it more statistically sound and reliable, and make it accessible to everyone so that groups and organizations throughout the country can use it to fight for their electoral rights.
 
 ![Image 1. Decelle (2017) "Students of the East Ramapo School District hold a sign during the One Voice United Rally in Albany". Retrieved July 7, 2020 from The Atlantic website: https://www.theatlantic.com/education/archive/2017/11/another-blow-to-one-of-americas-most-controversial-school-board/546227/ .](images/eastramapo_schooldistrict_rally_theatlantic.jpg)
 
-Without fair representation, minority citizens cannot effectively support and protect their own institutions such as education. In the East Ramapo case, lawyers from the New York Civil Liberties Union (NYCLU) explained how dilution of Black and Latino votes in school board elections led to the gradual siphoning of funds from public schools attended by Black and Latino students to private schools attended by white students. As a result, the educational experiences of public school attendees began to deteriorate:
+### The legal context
+
+Without fair representation, minority citizens cannot effectively support and protect their own institutions. The East Ramapo School Board example illustrates how vote dilution can cause an institution like education to erode over time. During the court proceedings, lawyers from the New York Civil Liberties Union (NYCLU) explained how a lack of minority representation on the board led to the gradual siphoning of funds from public schools attended by Black and Latino students to private schools attended by white students. As a result, the educational experiences of public school attendees began to deteriorate:
 
   * “The board eliminated hundreds of public school teaching, staff, and administrative positions and eliminated classes and programs”
 
@@ -31,29 +21,32 @@ Without fair representation, minority citizens cannot effectively support and pr
   * “The board closed two public schools over minority opposition”
   * “Graduation and test scores sank”
 
-To convince the judge that the defunding of public schools ultimately resulted from vote dilution, the plaintiffs’ evidence needed to pass the Gingles Test, established as precedent for assessing minority vote dilution in the 1986 case Thornburg v. Gingles. The Gingles test requires showing:
+To convince the judge that the defunding of public schools ultimately resulted from vote dilution, the plaintiffs’ evidence needed to pass the **Gingles Test**, established as precedent for assessing minority vote dilution in the 1986 case Thornburg v. Gingles. The Gingles Test requires showing:
 
   1. The group of minority voters is sufficiently large and geographically compact
   2. Minority voters are politically cohesive in supporting their candidate of choice
   3. The majority votes in a bloc to usually defeat the minority’s preferred candidate
 
+Requirement #1 can be assessed easily by looking at Census demographic data. Requirements #2 and #3, however, can be difficult to demonstrate because voting is confidential - we can never know who voted for which candidate with certainty. Recently, innovations in quantitative social science have enabled rigorous new analytic approaches to estimating the voting behavior of different demographic groups.  
 
-Voting dilution can be difficult to prove because voting is confidential - we can never know who voted for which candidate with certainty. However, new innovations in quantitative social science can now provide data-driven evidence to meet the requirements needed to pass the Gingles test.  These methods include ecological inference and Bayesian Improved Surname Geocoding (BISG). 
+### The statistical tools
 
+Satisfying the requirements presented by the Gingles Test requires a number of statistical techniques. Some of the most important methods are the following:
 
-Ecological inference (EI) takes aggregate and historical (ecological) data to infer individual behavior (King, 1997). BISG uses demographic data (i.e. surnames, racial identity, and geographic data) collected from the United States Census Bureau, along with, field-specific data like voter information to predict the race or ethnicity of each person in the sample population (Elliott et al. 2019). Current research further examines the methods of ecological inference and BISG through creating and updating existing software (built in R) that specifically calculates the probability of race or ethnicity for individuals and executes the process of EI for detecting voting dilution (Barreto et al. 2019, Collingwood et al. 2016).
+- **Ecological Inference (EI):** EI refers to a set of statistical techniques for estimating the behavior of individuals using data on aggregate behavior (Rosen et al., 2001; King, 1997).  In the context of elections, it has been applied in academic and legal settings to estimate the proportion of voters identifying with a particular race who voted for a particular candidate (*East Ramapo Cite Here*, Barreto et al., 2019). To see how eiCompare applies these techniques, see [this tutorial](link-to-vignette.com), with more advanced demonstrations [here](parallel.com) and [here](visualizations.com). 
 
+- **Bayesian Improved Surname Geocoding (BISG):** To execute EI we need measures of how many people identifying with each racial group actually turned out to vote in the election. BISG uses demographic data (i.e. surnames, racial identity, and geographic data) collected from the US Census Bureau, along with field-specific data like voter information to predict the race or ethnicity of each person in the sample population (Imai and Khana, 2016; Elliott et al. 2009). To learn more about the steps involved in BISG, see [this tutorial](another.vignette.ca) on geocoding  voter addresses and [this one](another) on BISG itself.
 
+- **Performance Analysis:** `eiCompare` also contains tools to analyze maps and predict whether the maps with 'perform', that is, enable minority voters to elect their preferred candidates. Performance analysis uses BISG as well, in combination with more advanced spatial methods. To learn more about it, see [this tutorial](one-last-vignette.com) that walks through an application of performance analysis to assess real maps that proposed as part of the East Ramapo case.
 
-References:
+## Project Goals
 
-1. Barreto, M., Collingwood, L., Garcia-Rios, S., & Oskooii, K. A. (2019). Estimating Candidate Support in Voting Rights Act Cases: Comparing Iterative EI and EI-R× C Methods. Sociological Methods & Research, 0049124119852394.
+We hope that the new version of `eiCompare` we develop will empower organizations like the ACLU, NAACP, and thousands of local community groups to begin their own legal battles against vote dilution. Throughout the project, we sought to achieve the following goals:
 
-2. Collingwood, L., Oskooii, K., Garcia-Rios, S., & Barreto, M. (2016). eiCompare: Comparing Ecological Inference Estimates across EI and EI: RC. R J., 8(2), 92.
-
-3. Elliott, M. N., Morrison, P. A., Fremont, A., McCaffrey, D. F., Pantoja, P., & Lurie, N. (2009). Using the Census Bureau’s surname list to improve estimates of race/ethnicity and associated disparities. Health Services and Outcomes Research Methodology, 9(2), 69.
-
-4. King, G. (1997). A solution to the ecological inference problem: reconstructing individual behavior from aggregate data. Princeton: Princeton University Press.
+1. Make the software in `eiCompare` accessible to users at all skill levels, from potential code contributors to those with little or no experience programming in `R`.
+2. Improve the statistical and methodological techniques in the package to make them as efficient, accurate, and robust as possible.
+3. Apply the tools within the package to real data, and transform these applications into instructional materials for users.
+4. Ensure that our work incorporates the feedback of our stakeholders in academia and national advocacy organizations, including the [ACLU](https://www.aclu.org/) and [NDRC](https://democraticredistricting.com/).
 
 
 **Stakeholders**
@@ -105,3 +98,15 @@ Secondly, eiCompare requires multiple processing and analysis steps to assess an
 *Diverse stakeholders*
 
 Lastly, we considered the multitude of potential direct and indirect stakeholders, as well as primary and secondary stakeholders, who would be affected by eiCompare. Each individual and group has their own benefits and risks with the creation of eiCompare and the team considered the package’s impact on all of these players. As stated above, accuracy, as well as a user friendly package, benefits the greater good of the community to make just and equitable voting more attainable. Even though a courtroom may set some of these stakeholders on opposing sides, a stable analysis from eiCompare would aid in ensuring fair elections.
+
+References:
+
+1. Barreto, M., Collingwood, L., Garcia-Rios, S., & Oskooii, K. A. (2019). Estimating Candidate Support in Voting Rights Act Cases: Comparing Iterative EI and EI-R× C Methods. Sociological Methods & Research, 0049124119852394.
+
+2. Collingwood, L., Oskooii, K., Garcia-Rios, S., & Barreto, M. (2016). eiCompare: Comparing Ecological Inference Estimates across EI and EI: RC. R J., 8(2), 92.
+
+3. Elliott, M. N., Morrison, P. A., Fremont, A., McCaffrey, D. F., Pantoja, P., & Lurie, N. (2009). Using the Census Bureau’s surname list to improve estimates of race/ethnicity and associated disparities. Health Services and Outcomes Research Methodology, 9(2), 69.
+
+4. King, G. (1997). A solution to the ecological inference problem: reconstructing individual behavior from aggregate data. Princeton: Princeton University Press.
+
+5. Imai, K., & Khanna, K. (2016). Improving ecological inference by predicting individual ethnicity from voter registration records. Political Analysis, 263-272.
