@@ -60,8 +60,23 @@ These approaches generally assume an underlying statistical model describing
 voting patterns that can be fit to the data. Currently, two approaches are
 predominantly used in voting rights litigation: King's iterative EI (King et
 al., 1997) and rows by columns (RxC) method (Rosen et al., 1999). Both
-approaches have their pros and cons. The `eiCompare` package helps facilitate
-comparisons between these approaches.
+approaches have their pros and cons. 
+
+King explains that the basic EI model has inherent assumptions that racial 
+voting patterns are not correlated with the racial composition of the precinct 
+or district being studied. It also assumes that there is no spatial dependency 
+on turnout (King, 1997). The quality of underlying data can also provide biased 
+results, with the worst case election data consisting of voting patterns that are 
+heterogeneous, polarized, and correlated. Feree touches upon these criticisms with
+respect to iterative EI, in addition to questioning the stability of results 
+depending on the number of candidates and race variables, aggregation bias, and 
+multimodality of data (Feree, 2004). RxC is cited as a better EI tool but the study 
+lacks empirical evidence. RxC is also known to be computationally expensive although 
+this is less of an issue with servers and optimal hardware. We mitigate any 
+uncertainties in these statistical tools by comparing iterative EI results with RxC
+and Goodman regression. The `eiCompare` package helps facilitate comparisons between 
+these approaches.
+
 
 See the EI vignette for details on how to use `eiCompare` to apply EI to voter
 data.
@@ -90,6 +105,20 @@ Figure 2). Next, we use that voter’s location to “update” the probability 
 posterior probability of race using Bayes’ Theorem. For example, if the person
 with the surname “Jackson” lives in an area that is predominantly black, that
 greatly increases the probability that they are black.
+
+BISG allows accuracy well beyond its predecessors, such as Geocoding Only (GO), 
+New Surname Only (NSO), and Bayesian Surname and Geocoding (BSG), but it can 
+nonetheless be improved. This method has proved more accurate in large population 
+sizes and highly segregated areas. The Census Bureau surname lists organized by 
+race, but if a voter’s name cannot be identified by this list they can not be 
+identified to be a part of these groups. The number of surnames in the list itself 
+are also limited. Surnames included in the database are required to have more than 
+100 occurrences and appear in less than five racial groups. If a surname has less 
+than 100 occurrences it is omitted from the database entirely (Elliot et al., 2009). 
+Accuracy of voter information (i.e. typos in surnames, incorrect geocoding) also pose
+obstacles for the accuracy of the resulting racial probability. `eiCompare` includes
+comprhensive data cleaning to improve accuracty and includes capabiltiies to compare 
+different sources for racial demographic data to assess viability of results.
 
 In practice, we utilize the package WRU (“Who Are You”) provided by Imai and
 Khanna (2016) to calculate the BISG. This package also allows updating the
