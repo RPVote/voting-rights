@@ -1,5 +1,7 @@
-eiCompare: Ecological Inference
-================
+---
+layout: page
+title: Ecological Inference
+---
 
 This vignette illustrates how we can use the Ecological Inference (EI)
 tools within `eiCompare` to learn about the voting behavior of different
