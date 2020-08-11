@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Parallel Processing
+title: eiCompare&#58; Parallel Processing
 ---
 
 
