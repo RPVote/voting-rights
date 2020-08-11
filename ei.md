@@ -237,7 +237,7 @@ plot_bivariate(
 )
 ```
 
-<img src="images/ei_files/plot1.png" style="display: block; margin: auto;" />
+![](images/ei_files/plot1.png)<!-- -->
 
 The `plot_bivariate()` function returns a `ggplot2` object plotting the
 relationships between each candidate’s precinct-level vote share and the
@@ -283,7 +283,7 @@ ei_results_iter <- ei_iter(
   race_cols = races,
   totals_col = total
 )
-#>   |                                                                              |                                                                      |   0%  |                                                                              |============                                                          |  17%
+
 summary_eic(ei_results_iter)
 #> $white
 #>         mean   se ci_95_lower ci_95_upper
