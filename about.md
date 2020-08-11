@@ -11,7 +11,7 @@ title: About
 
 <div style="clear: both;">
   <div style="float: left; margin-right 1em;">
-    <img src="images/photos/Burke-Juandalyn-Headshot-scaled.jpg" width = "125"> 
+    ![](<img src="images/photos/Burke-Juandalyn-Headshot-scaled.jpg" width = "125">)
   </div>
   <div>
     <h2>Juandalyn Burke</h2>
