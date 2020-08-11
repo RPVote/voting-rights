@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Conducting Performance Analyses
+title: eiCompare&#58; Conducting Performance Analyses
 ---
 
 This vignette introduces the concept of a performance analysis and
