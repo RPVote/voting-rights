@@ -57,10 +57,7 @@ racial/ethnic groups, however, can present more of a challenge. Luckily,
 the state of Georgia requires voters to self-report their race when they
 register. This means anyone can tabulate the number of voters
 self-reporting with each group in each precinct, provided they gain
-access to a voter file. That’s exactly what we’ve done here. To learn
-more about how to estimate voters’ race based only on their name and
-address, see the tutorials on [Geocoding voter files](geo.com) and
-[Bayesian Improved Surname Geocoding](BISG.com)
+access to a voter file. That’s exactly what we’ve done here. 
 
 We know the number of votes cast for each candidate and by each
 racial/ethnic group. From this data, we want to learn whether voters
@@ -268,9 +265,7 @@ and comparing the different EI techniques.
 ## Ecological Inference
 
 `eiCompare` enables users to analyze and compare the two dominant EI
-methods, Iterative EI and RxC EI. For more information about these
-techniques, see the [technical details](technical.details.com) page of
-our website.
+methods, Iterative EI and RxC EI. 
 
 We can run both methods with their respective functions. They take some
 time to run because they both compute point estimates by sampling from a
