@@ -1,6 +1,6 @@
 ---
 layout: page
-title: eiCompare: Parallel Processing
+title: Parallel Processing
 ---
 
 
@@ -196,5 +196,5 @@ multitudes of the \~4 minutes saved here, especially if you repeat
 function calls for analyses such as a boostrap.
 
 
-![](images/para_benchmark_box_nsamples.png | width = 50)<!-- -->
+![](images/para_benchmark_box_nsamples.png)<!-- -->
 
