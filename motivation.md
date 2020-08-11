@@ -79,8 +79,8 @@ statistical techniques. Some of the most important methods are the following:
   applied in academic and legal settings to estimate the proportion of voters
   identifying with a particular race who voted for a particular candidate (*East
   Ramapo Cite Here*, Barreto et al., 2019). To see how eiCompare applies these
-  techniques, see [this tutorial](link-to-vignette.com), with more advanced
-  demonstrations [here](parallel.com) and [here](visualizations.com).
+  techniques, see [this tutorial](ei.md), with more advanced
+  demonstrations [here](parallel_processing.md) and [here](visualizations.md).
 
 * **Bayesian Improved Surname Geocoding (BISG):** To execute EI we need measures
   of how many people identifying with each racial group actually turned out to
@@ -89,14 +89,14 @@ statistical techniques. Some of the most important methods are the following:
   field-specific data like voter information to predict the race or ethnicity of
   each person in the sample population (Imai and Khana, 2016; Elliott et al.
   2009). To learn more about the steps involved in BISG, see [this
-  tutorial](another.vignette.ca) on geocoding  voter addresses and [this
-  one](another) on BISG itself.
+  tutorial](geocoding.md) on geocoding  voter addresses and [this
+  one](bisg.md) on BISG itself.
 
 * **Performance Analysis:** `eiCompare` also contains tools to analyze maps and
   predict whether the maps with 'perform', that is, enable minority voters to
   elect their preferred candidates. Performance analysis uses BISG as well, in
   combination with more advanced spatial methods. To learn more about it, see
-  [this tutorial](one-last-vignette.com) that walks through an application of
+  [this tutorial](performance_analysis.md) that walks through an application of
   performance analysis to assess real maps that proposed as part of the East
   Ramapo case.
 

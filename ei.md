@@ -57,10 +57,7 @@ racial/ethnic groups, however, can present more of a challenge. Luckily,
 the state of Georgia requires voters to self-report their race when they
 register. This means anyone can tabulate the number of voters
 self-reporting with each group in each precinct, provided they gain
-access to a voter file. That’s exactly what we’ve done here. To learn
-more about how to estimate voters’ race based only on their name and
-address, see the tutorials on [Geocoding voter files](geo.com) and
-[Bayesian Improved Surname Geocoding](BISG.com)
+access to a voter file. That’s exactly what we’ve done here. 
 
 We know the number of votes cast for each candidate and by each
 racial/ethnic group. From this data, we want to learn whether voters
@@ -132,7 +129,7 @@ This anomaly has at least two possible explanations:
     entry is often done by hand. This can lead to small mistakes like a
     precincts’ vote tallies being split over two rows.
 
-2.  Election results databases typically contain the resutls of many
+2.  Election results databases typically contain the results of many
     elections that took place in different jurisdictions and at
     different times. When extracting the results of a particular
     election, an easy mistake is to accidentally extract some results
@@ -237,7 +234,7 @@ plot_bivariate(
 )
 ```
 
-<img src="images/ei_files/plot1.png" style="display: block; margin: auto;" />
+![](images/ei_files/plot1.png)<!-- -->
 
 The `plot_bivariate()` function returns a `ggplot2` object plotting the
 relationships between each candidate’s precinct-level vote share and the
@@ -268,9 +265,7 @@ and comparing the different EI techniques.
 ## Ecological Inference
 
 `eiCompare` enables users to analyze and compare the two dominant EI
-methods, Iterative EI and RxC EI. For more information about these
-techniques, see the [technical details](technical.details.com) page of
-our website.
+methods, Iterative EI and RxC EI. 
 
 We can run both methods with their respective functions. They take some
 time to run because they both compute point estimates by sampling from a
@@ -283,7 +278,7 @@ ei_results_iter <- ei_iter(
   race_cols = races,
   totals_col = total
 )
-#>   |                                                                              |                                                                      |   0%  |                                                                              |============                                                          |  17%
+
 summary_eic(ei_results_iter)
 #> $white
 #>         mean   se ci_95_lower ci_95_upper
