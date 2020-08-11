@@ -11,19 +11,28 @@ title: About
 
 <div style="clear: both;">
   <div style="float: left; margin-right 1em;">
-    ![](<img src="images/photos/Burke-Juandalyn-Headshot-scaled.jpg" width = "125">)
+    ![](images/photos/Burke-Juandalyn-Headshot-scaled.jpg)
   </div>
   <div>
-    <h2>Juandalyn Burke</h2>
+    <h4>Juandalyn Burke</h4>
     <p>Juandalyn Burke is a doctoral student in the Biomedical Informatics and Medical Education department at the University of Washington. Her interests include using informatics methods and technologies to better understand and build predictive models that identify strategies for solving societal and economic issues surrounding health, education, the environment, and human rights. Prior to joining her Ph.D. program, Juandalyn worked as a data analyst/data manager, earned her Master of Public Health (MPH) in Environmental Epidemiology at the University of Michigan and a B.S. in Environmental Science from Spelman College. Her current dissertation uses mathematical modelling to predict HIV Drug Resistance in individuals and in the population for people of African descent and specifically in the areas of sub-Saharan Africa. When she is not working, you can find her checking out local artists, plays and musicians for the latest scenes and sounds!</p>
   </div>
 </div>
 
-<img src="images/photos/Burke-Juandalyn-Headshot-scaled.jpg" width = "125"> 
-Juandalyn Burke is a doctoral student in the Biomedical Informatics and Medical Education department at the University of Washington. Her interests include using informatics methods and technologies to better understand and build predictive models that identify strategies for solving societal and economic issues surrounding health, education, the environment, and human rights. Prior to joining her Ph.D. program, Juandalyn worked as a data analyst/data manager, earned her Master of Public Health (MPH) in Environmental Epidemiology at the University of Michigan and a B.S. in Environmental Science from Spelman College. Her current dissertation uses mathematical modelling to predict HIV Drug Resistance in individuals and in the population for people of African descent and specifically in the areas of sub-Saharan Africa. When she is not working, you can find her checking out local artists, plays and musicians for the latest scenes and sounds!
+<div style="clear: both;">
+  <div style="float: left; margin-right 1em;">
+    ![](images/photos/Decter-Frain-Ari-Headshot-scaled.jpg)
+  </div>
+  <div>
+    <h4>Ari Decter-Frain</h4>
+    <p>Ari Decter-Frain is a first-year doctoral student in Cornell University’s Department of Policy Analysis and Management. He holds an MSc in Inequalities and Social Science from the London School of Economics and Political Science and a B.A. in Psychology from the University of Winnipeg. Before joining Cornell, Ari worked for two years in data science and product management at MHS, a Toronto-based human capital analytics company.
+Ari is interested in social policies targeting unemployed and precarious workers. He also works on quantifying political polarization in online marketplaces, and on using digital trace data for demographic estimation. His projects employ social network analysis, Bayesian statistics, and machine learning methods.!</p>
+  </div>
+</div>
 
 
-<img src="images/photos/Decter-Frain-Ari-Headshot-scaled.jpg" width = "125"> 
+
+<img src="/images/photos/Decter-Frain-Ari-Headshot-scaled.jpg" width = "125"> 
 Ari Decter-Frain is a first-year doctoral student in Cornell University’s Department of Policy Analysis and Management. He holds an MSc in Inequalities and Social Science from the London School of Economics and Political Science and a B.A. in Psychology from the University of Winnipeg. Before joining Cornell, Ari worked for two years in data science and product management at MHS, a Toronto-based human capital analytics company.
 Ari is interested in social policies targeting unemployed and precarious workers. He also works on quantifying political polarization in online marketplaces, and on using digital trace data for demographic estimation. His projects employ social network analysis, Bayesian statistics, and machine learning methods.
 
