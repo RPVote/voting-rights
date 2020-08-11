@@ -191,7 +191,7 @@ posterior values for \(\beta^b\) and \(\beta^w\). One of the key
 features here is that this informs the bounds for these values for each
 precinct. The red dots indicate their point estimates.
 
-<img src="images/tomography_pct_montanez_pct_hisp.png" width="100%" />
+<img src="images/tomography_pct_montanez_pct_hisp.png" width="60%" />
 
 ### Density \(\beta^b\) and \(\beta^w\) comparison plots
 
@@ -201,7 +201,7 @@ allows for insight into the location of this point estimate as well as
 assess the associated uncertainty. Black tick marks at the bottom
 indicate the locations of each point estimate that was calculated.
 
-<img src="images/density_pct_montanez_pct_hisp.png" width="100%" />
+<img src="images/density_pct_montanez_pct_hisp.png" width="60%" />
 
 ### Density voter choice comparison plots for each race
 
@@ -212,7 +212,7 @@ population and comparing how they voted for Husted and Button in this
 election. We can see that there is almost 30% of overlap between the
 density curves for these two candidates.
 
-<img src="pct_husted_pct_button_asian.png" width="100%" />
+<img src="images/pct_husted_pct_button_asian.png" width="60%" />
 
 ### Racial polarized voting density plots
 
@@ -221,7 +221,7 @@ distribution of the district level aggregates of \(\beta^b\) and
 \(\beta^w\). The furthere the distribtuion mean is away from 0, the
 higher possibility of RPV.
 
-<img src="images/rpv_density.png" width="100%" />
+<img src="images/rpv_density.png" width="60%" />
 
 #### BELOW NOT COMPLETE YET
 

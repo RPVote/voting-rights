@@ -195,4 +195,4 @@ equate a shorter run time. Nonetheless, parallelization can save
 multitudes of the \~4 minutes saved here, especially if you repeat
 function calls for analyses such as a boostrap.
 
-<img src="images/para_benchmark_box_nsamples.png" width="100%" />
+<img src="images/para_benchmark_box_nsamples.png" width="60%" />
