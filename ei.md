@@ -132,7 +132,7 @@ This anomaly has at least two possible explanations:
     entry is often done by hand. This can lead to small mistakes like a
     precincts’ vote tallies being split over two rows.
 
-2.  Election results databases typically contain the resutls of many
+2.  Election results databases typically contain the results of many
     elections that took place in different jurisdictions and at
     different times. When extracting the results of a particular
     election, an easy mistake is to accidentally extract some results
