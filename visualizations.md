@@ -9,16 +9,16 @@ produce plots. These visualizations include:
 
   - *Tomography plots*
     
-    Each line on the graph represents \(\beta^b\) and \(\beta^w\) each
+    Each line on the graph represents &beta;<sub>b</sub> and &beta;<sub>w</sub> each
     geographical unit (i.e. precinct). Not only does this plot
     graphically show the bounds those values have, the overlayed
     contours show which values on those lines have the highest
     probability of being an accurate estimate.
 
-  - *Density \(\beta^b\) and \(\beta^w\) comparison plots*
+  - *Density &beta;<sub>b</sub> and &beta;<sub>w</sub> comparison plots*
     
     As an output from iterative ei, these 2-pane plots compare the
-    distribution of \(\beta^b\) and \(\beta^w\) to show the uncertainty
+    distribution of &beta;<sub>b</sub> and &beta;<sub>w</sub> to show the uncertainty
     of the point estimates.
 
   - *Density voter choice comparison plots for each race*
@@ -187,16 +187,16 @@ generated from `ei_iter`.
 
 Let’s look at the tomography plot for the Candidate for the Hispanic
 demographic. Each line on this graph represents a precinct, showing the
-posterior values for \(\beta^b\) and \(\beta^w\). One of the key
+posterior values for &beta;<sub>b</sub> and &beta;<sub>w</sub>. One of the key
 features here is that this informs the bounds for these values for each
 precinct. The red dots indicate their point estimates.
 
 <img src="images/tomography_pct_montanez_pct_hisp.png" width="60%" />
 
-### Density \(\beta^b\) and \(\beta^w\) comparison plots
+### Density &beta;<sub>b</sub> and &beta;<sub>w</sub> comparison plots
 
 These plots can be used to confirm this point estimate distributions for
-\(\beta^b\) and \(\beta^w\) across precints. The green density curve
+&beta;<sub>b</sub> and &beta;<sub>w</sub> across precints. The green density curve
 allows for insight into the location of this point estimate as well as
 assess the associated uncertainty. Black tick marks at the bottom
 indicate the locations of each point estimate that was calculated.
@@ -217,8 +217,8 @@ density curves for these two candidates.
 ### Racial polarized voting density plots
 
 Racially polarized voting by taking the difference of the posterior
-distribution of the district level aggregates of \(\beta^b\) and
-\(\beta^w\). The furthere the distribtuion mean is away from 0, the
+distribution of the district level aggregates of &beta;<sub>b</sub> 
+and &beta;<sub>w</sub>. The furthere the distribtuion mean is away from 0, the
 higher possibility of RPV.
 
 <img src="images/rpv_density.png" width="60%" />
