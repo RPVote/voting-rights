@@ -4,7 +4,6 @@ title: About
 ---
 
 ### About
-
 ![](assets/img/photos/DSSG-voting-equity-team-jpg.jpg)<!---->
 
 
@@ -40,7 +39,6 @@ Ari is interested in social policies targeting unemployed and precarious workers
     <p>Hikari Murayama is a master’s student in the Energy and Resources Group at the University of California – Berkeley. She earned her B.A. in Chemical Physics from Wellesley College while simultaneously co-founding a women’s empowerment program in Japan for high school girls called Leadership and Action for Determined Youth (LADY). Hikari then began her professional career doing economic consulting for Bates White in Washington D.C. While her interest in data and analytics never subsided, Hikari’s passion for socially-focused, impact-driven work led her to join NASA DEVELOP. She worked on land cover and water remote sensing to inform jaguar and coral reef habitat restoration efforts in Costa Rica. For her graduate work, Hikari is interested in utilizing data science and geospatial techniques to understand human-climate interactions. Hikari also likes boxing, hiking, baking, and hanging out with her dog Momo in her free time.</p>
   </div>
 </div>
-
 
 <div style="clear: both;">
   <div style="float: left; margin-right 10px;">
@@ -108,3 +106,10 @@ Space-based geodesy is entering a new era in which measurements are routine and 
 
 We'd like to thank everyone at the eScience institute and the individuals involved in the Data Science for Social Good program. We're also grateful for the generous sponsorship from the Micron Foundation and the Alfred P. Sloan Foundation.
 
+</div>
+
+
+
+### Acknowledgements
+
+We'd like to thank everyone at the eScience institute and the individuals involved in the Data Science for Social Good program. We're also grateful for the generous sponsorship from the Micron Foundation and the Alfred P. Sloan Foundation.
