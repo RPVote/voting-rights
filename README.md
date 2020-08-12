@@ -2,41 +2,6 @@
 
 This is a template for a public [gh-pages](https://pages.github.com/) webpage for DSSG summer projects which can be freely hosted online.
 
-## Repo Creation
-For simplicity we suggest to create a separate repo for the webpage (separate from the code). We will also provide the option to set it up for the repo that you already have, but that will require more git work. If needed ownership and website name can be changed in the future, so pick something as a starting point. 
-
-### Option 1 (new repo)
-* decide on a name for the repository: we suggest to follow the format `DSSG2020-name-of-repo` (it will determine the webpage url)
-* provide an eScience Data Scientist with the name and the usernames of all the team members
-* we will create a repo under the [uwescience organization](https://github.com/uwescience) for you and the final address will be [DSSG-eiCompare.github.io/voting_rights](DSSG-eiCompare.github.io/voting_rights) (we will use the [repo importer](https://help.github.com/en/articles/importing-a-repository-with-github-importer) and it may take a bit of time)
-* enable publishing through the master branch (Settings -> GitHub-Pages)
-
-### Option 2 (existing repo)
-
- * create a gh-pages branch (make it orphan so that it does not have any history)
- * remove all tracked files from it
- * pull the files from the template
- * push to github the changes to create a public gh-pages branch
- * enable publishing through the gh-pages branch (Settings -> GitHub-Pages)
- 
- ```
-    # make an orphan branch
-    git checkout --orphan gh-pages
-    
-    # preview files to be deleted
-    git rm -rf --dry-run .
-    
-    # actually delete the files
-    git rm -rf .
-    
-    # get the template
-    git pull https://github.com/uwescience/DSSG-website-template
-    
-    # push the local branch to a public branch on github
-    git push origin gh-pages 
- ```
-
-
 ## Configuring your website
 * Modify your project name in the `_config.yml` file
 	
