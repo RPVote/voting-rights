@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Visualizations
+title: eiCompare&#58; Visualizations
 ---
 
 This vignette aims to highlight the functionalities within eiCompare to

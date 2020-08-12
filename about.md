@@ -4,14 +4,14 @@ title: About
 ---
 
 ### About
+![](assets/img/photos/DSSG-voting-equity-team-jpg.jpg)<!---->
 
-![](images/photos/DSSG-voting-equity-team-jpg.jpg)<!-- -->
 
 #### Fellows
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 1em;">
-    < img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Burke-Juandalyn-Headshot-scaled.jpg" width = "125">
+  <div style="float: left; margin-right 10px;">
+    <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Burke-Juandalyn-Headshot-scaled.jpg" width = "125">
   </div>
   <div>
     <h4>Juandalyn Burke</h4>
@@ -20,8 +20,8 @@ title: About
 </div>
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 1em;">
-    < img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Decter-Frain-Ari-Headshot-scaled.jpg" width = "125">
+  <div style="float: left; margin-right 10px;">
+    <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Decter-Frain-Ari-Headshot-scaled.jpg" width = "125">
   </div>
   <div>
     <h4>Ari Decter-Frain</h4>
@@ -31,8 +31,8 @@ Ari is interested in social policies targeting unemployed and precarious workers
 </div>
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 1em;">
-    < img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Murayama-Hikari-Headshot.jpg" width = "125">
+  <div style="float: left; margin-right 10px;">
+    <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Murayama-Hikari-Headshot.jpg" width = "125">
   </div>
   <div>
     <h4>Hikari Murayama</h4>
@@ -40,10 +40,9 @@ Ari is interested in social policies targeting unemployed and precarious workers
   </div>
 </div>
 
-
 <div style="clear: both;">
-  <div style="float: left; margin-right 1em;">
-    < img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Sachdeva-Pratik-Headshot.jpg" width = "125">
+  <div style="float: left; margin-right 10px;">
+    <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Sachdeva-Pratik-Headshot.jpg" width = "125">
   </div>
   <div>
     <h4>Pratik Sachdeva</h4>
@@ -56,8 +55,8 @@ Ari is interested in social policies targeting unemployed and precarious workers
 #### Project Leads
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 1em;">
-    < img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Matt-Barreto-headshot.jpg" width = "125">
+  <div style="float: left; margin-right 10px;">
+    <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Matt-Barreto-headshot.jpg" width = "125">
   </div>
   <div>
     <h4>Matt A. Barreto</h4>
@@ -67,8 +66,8 @@ Ari is interested in social policies targeting unemployed and precarious workers
 </div>
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 1em;">
-    < img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Collingwood-Loren-Headshot.jpg" width = "125">
+  <div style="float: left; margin-right 10px;">
+    <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Collingwood-Loren-Headshot.jpg" width = "125">
   </div>
   <div>
     <h4>Loren Collingwood</h4>
@@ -80,8 +79,8 @@ Ari is interested in social policies targeting unemployed and precarious workers
 #### Data Scientists
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 1em;">
-    < img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Scott-Henderson.jpg" width = "125">
+  <div style="float: left; margin-right 10px;">
+    <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Scott-Henderson.jpg" width = "125">
   </div>
   <div>
     <h4>Scott Henderson</h4>
@@ -92,13 +91,21 @@ Space-based geodesy is entering a new era in which measurements are routine and 
 </div>
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 1em;">
-    < img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Spencer-Wood-2.jpg" width = "125">
+  <div style="float: left; margin-right 10px;">
+    <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Spencer-Wood-2.jpg" width = "125">
   </div>
   <div>
     <h4>Spencer Wood</h4>
      <p>Spencer is a Senior Research Scientist in the UW College of the Environment, where he studies the ways that people interact with and benefit from nature. Much of his research focuses on outdoor recreation, using empirical and mathematical approaches to model the distributions, behaviors, and preferences of park visitors. As another ongoing line of research, Spencer uses ecological networks as tools for modeling humans’ changing roles in ecosystems over thousands of years. Spencer frequently partners with governments, practitioners, and corporations, to develop software and tools that make information accessible to decision-makers. He contributes to open-source software for mapping and modeling ecosystem services, and leads development of software for analyzing and visualizing geolocated social media and crowd-sourced data from parks and green-spaces. Spencer is excited for the opportunity that DSSG provides to learn about voting rights, develop new skills, and collaborate with fellows on projects that will provide lasting benefits to society.</p>
   </div>
+</div>
+
+
+### Acknowledgements
+
+
+We'd like to thank everyone at the eScience institute and the individuals involved in the Data Science for Social Good program. We're also grateful for the generous sponsorship from the Micron Foundation and the Alfred P. Sloan Foundation.
+
 </div>
 
 
