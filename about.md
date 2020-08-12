@@ -11,7 +11,7 @@ title: About
 #### Fellows
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 3em;">
+  <div style="float: left; margin-right 10px;">
     <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Burke-Juandalyn-Headshot-scaled.jpg" width = "125">
   </div>
   <div>
@@ -21,7 +21,7 @@ title: About
 </div>
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 3em;">
+  <div style="float: left; margin-right 10px;">
     <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Decter-Frain-Ari-Headshot-scaled.jpg" width = "125">
   </div>
   <div>
@@ -32,7 +32,7 @@ Ari is interested in social policies targeting unemployed and precarious workers
 </div>
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 3em;">
+  <div style="float: left; margin-right 10px;">
     <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Murayama-Hikari-Headshot.jpg" width = "125">
   </div>
   <div>
@@ -43,7 +43,7 @@ Ari is interested in social policies targeting unemployed and precarious workers
 
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 3em;">
+  <div style="float: left; margin-right 10px;">
     <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Sachdeva-Pratik-Headshot.jpg" width = "125">
   </div>
   <div>
@@ -57,7 +57,7 @@ Ari is interested in social policies targeting unemployed and precarious workers
 #### Project Leads
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 3em;">
+  <div style="float: left; margin-right 10px;">
     <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Matt-Barreto-headshot.jpg" width = "125">
   </div>
   <div>
@@ -68,7 +68,7 @@ Ari is interested in social policies targeting unemployed and precarious workers
 </div>
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 3em;">
+  <div style="float: left; margin-right 10px;">
     <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Collingwood-Loren-Headshot.jpg" width = "125">
   </div>
   <div>
@@ -81,7 +81,7 @@ Ari is interested in social policies targeting unemployed and precarious workers
 #### Data Scientists
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 3em;">
+  <div style="float: left; margin-right 10px;">
     <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Scott-Henderson.jpg" width = "125">
   </div>
   <div>
@@ -93,7 +93,7 @@ Space-based geodesy is entering a new era in which measurements are routine and 
 </div>
 
 <div style="clear: both;">
-  <div style="float: left; margin-right 3em;">
+  <div style="float: left; margin-right 10px;">
     <img src = "{{ site.url }}{{ site.baseurl }}/assets/img/photos/Spencer-Wood-2.jpg" width = "125">
   </div>
   <div>
