@@ -262,7 +262,7 @@ other hand, the marginal density plots show the distribution of this
 parameter. You’re looking for a bell curve here– if its lumpy you’ll
 want to run the algorithm longer.
 
-<embed src="{{ site.url }}{{ site.baseurl }}/images/trace_density.pdf" width="0.75\linewidth" type="application/pdf" />
+[trace_density.pdf](/images/trace_density.pdf)
 
 ### Gelman-Rubin diagnostic plot
 
@@ -273,7 +273,7 @@ these plots you’ll be looking to for values below a factor of \~1.1 so
 these plots will give you a good sense of any changes you’ll need for
 burn-in.
 
-<embed src="{{ site.url }}{{ site.baseurl }}/images/geolman.pdf" width="0.75\linewidth" type="application/pdf" />
+[gelman.pdf](/images/gelman.pdf)
 
 ## EI and RxC comparison chart
 
