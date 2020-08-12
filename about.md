@@ -105,11 +105,3 @@ Space-based geodesy is entering a new era in which measurements are routine and 
 
 
 We'd like to thank everyone at the eScience institute and the individuals involved in the Data Science for Social Good program. We're also grateful for the generous sponsorship from the Micron Foundation and the Alfred P. Sloan Foundation.
-
-</div>
-
-
-
-### Acknowledgements
-
-We'd like to thank everyone at the eScience institute and the individuals involved in the Data Science for Social Good program. We're also grateful for the generous sponsorship from the Micron Foundation and the Alfred P. Sloan Foundation.
