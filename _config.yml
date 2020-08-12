@@ -8,7 +8,7 @@ permalink:        pretty
 title:            Voting Rights
 tagline:          ''
 description:      'A 2020 Data Science for Social Good summer fellowship project at the University of Washington' 
-url:              "https://DSSG-eiCompare.github.io"
+url:              "https://RPVote.github.io"
 baseurl:          "/voting-rights"
 
 
@@ -18,4 +18,4 @@ paginate:         5
 version:          0.0.0
 
 github:
-  repo:           https://github.com/DSSG-eiCompare/voting-rights/
+  repo:           https://github.com/RPVote/voting-rights/
