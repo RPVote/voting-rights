@@ -1,8 +1,7 @@
 ---
 layout: page
-title: eiCompare: Visualizations
+title: Visualizations
 ---
-
 
 This vignette aims to highlight the functionalities within eiCompare to
 produce plots. These visualizations include:
@@ -30,18 +29,17 @@ produce plots. These visualizations include:
 
   - *MCMC convergence density plots*
     
-    These MCMC draw plots show… {NOT COMPLETE}
+    Using `coda`, `ei_rxc()` can create diagnostic plot to assess
+    convergence of the Markov Chain Monte Carlo (MCMC) and visualize the
+    parameter fluctuations over iterations and its distribution. It is
+    recommended to do a diagnostic run and assessing these results prior
+    to running the full RxC analysis.
 
   - *Summary plot to compare iterative ei and RxC results*
     
     As discussed in Barreto, Collingwood, Garcia-Ross, and Oskooii’s
     study, RxC and iterative EI should produce similar results. This
     output visualizes the difference seen in these two methods.
-
-These plots can be created as part of running iterative ei, `ei_iter()`,
-as we as `ei_rxc()`. Furthermore, this notebook will cover how to use
-these plot outputs and use the `patchwork` package to create
-consolidated figures for reports and presentations.
 
 ## Introducing our example data set: Corona, CA
 
@@ -129,9 +127,9 @@ corona$pct_hisp + corona$pct_non_lat == 1
     #> [31] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
     #> [46] TRUE
 
-So for this analysis there are 5 candidates (Husted, Spiegel, Ruth,
-Button, and Montanez) and 3 racial groups (Hispanic/Latino, Asian, and
-White).
+So for this analysis there are 6 candidates (Husted, Spiegel, Ruth,
+Button, Montanez, and Fox) and 3 racial groups (Hispanic/Latino, Asian,
+and White).
 
 ## `ei_iter()`: Tomography, Density comparison, Density voter choice
 
@@ -144,14 +142,14 @@ your plots, you can specify a `plots_path`. In this example we’ll just
 set it to where this vignette lives.
 
 ``` r
-save_path <- "~/eiCompare/output/"
+save_path <- "~/hikari-stuff/eiCompare/vignettes/"
 ```
 
 Time to run our iteraative ei\!
 
 ``` r
 cand_cols <- c("pct_husted", "pct_spiegel", "pct_ruth", "pct_button", "pct_montanez", "pct_fox")
-race_cols <- c("pct_hisp", "pct_asian", "pct_white", "pct_non_lat")
+race_cols <- c("pct_hisp", "pct_asian", "pct_white")
 totals_col <- "totvote"
 
 # Run with plots =
@@ -162,7 +160,7 @@ ei_results <- ei_iter(corona, cand_cols, race_cols, totals_col,
 
     #>   |                                                                              |                                                                      |   0%
 
-    #>   |                                                                              |======                                                                |   8%
+    #>   |                                                                              |========                                                              |  11%
 
     #> 
     #> [1] "Creating density plots"
@@ -172,11 +170,9 @@ ei_results <- ei_iter(corona, cand_cols, race_cols, totals_col,
 
     #> Loading required package: testthat
 
-    #>   |                                                                              |==================                                                    |  25%
+    #>   |                                                                              |=======================                                               |  33%
 
-    #>   |                                                                              |===================================                                   |  50%
-
-    #>   |                                                                              |====================================================                  |  75%
+    #>   |                                                                              |===============================================                       |  67%
 
     #>   |                                                                              |======================================================================| 100%
 
@@ -191,7 +187,7 @@ posterior values for &beta;<sub>b</sub> and &beta;<sub>w</sub>. One of the key
 features here is that this informs the bounds for these values for each
 precinct. The red dots indicate their point estimates.
 
-![](images/tomography_pct_montanez_pct_hisp.png)<!-- -->
+<img src="{{ site.url }}{{ site.baseurl }}/images/tomography_pct_montanez_pct_hisp.png" width="100%" />
 
 ### Density &beta;<sub>b</sub> and &beta;<sub>w</sub> comparison plots
 
@@ -201,7 +197,7 @@ allows for insight into the location of this point estimate as well as
 assess the associated uncertainty. Black tick marks at the bottom
 indicate the locations of each point estimate that was calculated.
 
-![](images/density_pct_montanez_pct_hisp.png)<!-- -->
+<img src="{{ site.url }}{{ site.baseurl }}/images/density_pct_montanez_pct_hisp.png" width="100%" />
 
 ### Density voter choice comparison plots for each race
 
@@ -212,23 +208,94 @@ population and comparing how they voted for Husted and Button in this
 election. We can see that there is almost 30% of overlap between the
 density curves for these two candidates.
 
-![](images/pct_husted_pct_button_asian.png)<!-- -->
+<img src="{{ site.url }}{{ site.baseurl }}/images/pct_husted_pct_button_asian.png" width="100%" />
 
 ### Racial polarized voting density plots
 
 Racially polarized voting by taking the difference of the posterior
-distribution of the district level aggregates of &beta;<sub>b</sub> 
-and &beta;<sub>w</sub>. The furthere the distribtuion mean is away from 0, the
+distribution of the district level aggregates of &beta;<sub>b</sub> and &beta;<sub>w</sub>. The furthere the distribtuion mean is away from 0, the
 higher possibility of RPV.
 
-![](images/rpv_density.png)<!-- -->
-
-#### BELOW NOT COMPLETE YET
+<img src="{{ site.url }}{{ site.baseurl }}/images/rpv_density.png" width="100%" />
 
 ## `ei_rxc()`: Density voter choice, MCMC convergence
 
-### MCMC convergence density plots
+`ei_rxc` also has capabiltiies to create density voter choice plots. But
+keep in mind these may take a long time to run depedning on what you
+specify for draws. You can opt into creating these plots as in `ei_iter`
+by toggling `plots = TRUE`.
+
+In addition, to assess your RxC parameter set up, we recommend running a
+diagnostic test first. By toggling to `diagnostic = TRUE` you will be
+able to conduct a MCMC chain analysis and test for convergence.
+
+``` r
+rxc_diag <- ei_rxc(
+  data = corona, cand_cols, race_cols, totals_col, diagnostic = TRUE,
+  par_compute = TRUE, verbose = TRUE
+)
+```
+
+    #> Setting random seed equal to 908418 ...
+
+    #> Tuning parameters...
+
+    #> Collecting samples...
+
+    #> Running diagnostic
+
+    #> Running in paralllel
+
+    #>   |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+
+    #> Creating and saving plots
+
+The following plots are created by using the `coda` package.
+
+### Trace and marginal density plots
+
+`coda` enables creating trace and density plots, side-by-side for each
+parameter, with ease. Trace plots show the calculated parameter for each
+iteration. If there seems to be a chain lags to join the rests’ mode,
+this is an indication you’d want to increase the burn-in period. On the
+other hand, the marginal density plots show the distribution of this
+parameter. You’re looking for a bell curve here– if its lumpy you’ll
+want to run the algorithm longer.
+
+<embed src="{{ site.url }}{{ site.baseurl }}/images/trace_density.pdf" width="0.75\linewidth" type="application/pdf" />
+
+### Gelman-Rubin diagnostic plot
+
+The Gelman-Rubin diagnostic is one method to test for convergence to see
+if the sample is close to the posterior distribution. You’ll get one
+plot for each parameter and produces the scale reduction factor. In
+these plots you’ll be looking to for values below a factor of \~1.1 so
+these plots will give you a good sense of any changes you’ll need for
+burn-in.
+
+<embed src="{{ site.url }}{{ site.baseurl }}/images/geolman.pdf" width="0.75\linewidth" type="application/pdf" />
 
 ## EI and RxC comparison chart
 
-## Patchwork
+The `ei_rc_good_table` function lets the user compare the distribution
+of their ei and rxc results. This plot is one method to double check RxC
+parameter settings and enable users to go back and check over their
+work.
+
+First let’s run the rxc analysis:
+
+``` r
+# rxc_results <- ei_rxc(
+#   data = corona, cand_cols, race_cols, totals_col, diagnostic = FALSE,
+#   par_compute = TRUE, verbose = TRUE
+# )
+```
+
+And now we can combine our results to compare their distributions.
+
+``` r
+# ei_rc_combine <- ei_rc_good_table(ei_results, rxc_results,
+#   groups = c("Latino", "Asian", "White")
+# )
+# plot(ei_rc_combine)
+```
