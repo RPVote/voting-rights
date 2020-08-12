@@ -3,14 +3,10 @@ layout: page
 title: About
 ---
 
----
-layout: page
-title: About
----
-
 ### About
 
-![](images/photos/DSSG-voting-equity-team-jpg.jpg)<!-- -->
+![](assets/img/photos/DSSG-voting-equity-team-jpg.jpg)<!---->
+
 
 #### Fellows
 
