@@ -249,8 +249,7 @@ increase the burn-in period. On the other hand, the marginal density
 plots show the distribution of this parameter. You’re looking for a bell
 curve here– if its lumpy you’ll want to run the algorithm longer.
 
-<object data="{ site.url }}{{ site.baseurl }}/images/trace_density.pdf" type="application/pdf" width="100%"> 
-</object>
+![trace and density](/images/trace_density.pdf){width=75%}
 
 ### Gelman-Rubin diagnostic plot
 
@@ -261,8 +260,8 @@ these plots you’ll be looking to for values below a factor of \~1.1 so
 these plots will give you a good sense of any changes you’ll need for
 burn-in.
 
-<object data="{ site.url }}{{ site.baseurl }}/images/gelman.pdf" type="application/pdf" width="100%"> 
-</object>
+![gelman](/images/gelman.pdf){width=75%}
+
 
 ## Summary
 
