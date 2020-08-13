@@ -11,7 +11,7 @@ within eiCompare. Functions that include this option are:
 
   - `ei_rxc()` (only for diagnostic)
 
-  - \[INSERT GEOCODING FUNCTION NAME HERE\]
+  - `run_geocoder()`
 
 Prior to attempting to run these functions in parallel, it is advised
 you check your computer or server for the following properites:
@@ -41,15 +41,15 @@ for the number of cores you have available to you. If you have less than
 Even with exacltly 4 cores, the functions will return a warning that
 parallelization is not recommended.
 
-There are many sources online if you’d like to learn more about
+There are many resources online if you’d like to learn more about
 parallelization in general.
 
 ## Walking through an example: `ei_iter()`
 
-In this vignette, we’ll be focusing on `ei_iter()`, which is discussed
-in a previous vignette, \[INSERT TITLE HERE\]. We recommend that you
-review this vignette prior to attempting parallelization for this
-function.
+In this vignette, we’ll be focusing on `ei_iter()` (the functionalities
+and work flow are described in detail in the Ecological Inference
+tutorial). We recommend that you review this vignette prior to
+attempting parallelization for this function.
 
 The data we’ll be using for this example is from 2014 elections in
 California, specifically looking at voting results and racial
@@ -135,7 +135,7 @@ corona$pct_hisp + corona$pct_non_lat == 1
     #> [31] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
     #> [46] TRUE
 
-So for this analysis there are 5 candidates (Husted, Spiegel, Ruth,
+So for this analysis there are 6 candidates (Husted, Spiegel, Ruth,
 Button, and Montanez) and 3 racial groups (Hispanic/Latino, Asian, and
 White). With that, let’s set up the inputs we need for the function and
 time it to see how long it takes to complete the iterative ei analysis
@@ -143,7 +143,7 @@ without parallelization.
 
 ``` r
 cand_cols <- c("pct_husted", "pct_spiegel", "pct_ruth", "pct_button", "pct_montanez", "pct_fox")
-race_cols <- c("pct_hisp", "pct_asian", "pct_white", "pct_non_lat")
+race_cols <- c("pct_hisp", "pct_asian", "pct_white")
 totals_col <- "totvote"
 
 # Run without parallization
@@ -151,13 +151,13 @@ start_time <- Sys.time()
 results_test <- ei_iter(corona, cand_cols, race_cols, totals_col)
 ```
 
-    #>   |                                                                              |                                                                      |   0%  |                                                                              |======                                                                |   8%
+    #>   |                                                                              |                                                                      |   0%  |                                                                              |========                                                              |  11%
 
 ``` r
 (end_time <- Sys.time() - start_time)
 ```
 
-    #> Time difference of 1.893189 mins
+    #> Time difference of 1.075621 mins
 
 To run in this parallel, all you need to do is toggle `par_compute` to
 be TRUE.
@@ -168,13 +168,13 @@ start_time <- Sys.time()
 results_test <- ei_iter(corona, cand_cols, race_cols, totals_col, par_compute = TRUE)
 ```
 
-    #>   |                                                                              |                                                                      |   0%  |                                                                              |===                                                                   |   4%  |                                                                              |======                                                                |   8%  |                                                                              |=========                                                             |  12%  |                                                                              |============                                                          |  17%  |                                                                              |===============                                                       |  21%  |                                                                              |==================                                                    |  25%  |                                                                              |====================                                                  |  29%  |                                                                              |=======================                                               |  33%  |                                                                              |==========================                                            |  38%  |                                                                              |=============================                                         |  42%  |                                                                              |================================                                      |  46%  |                                                                              |===================================                                   |  50%  |                                                                              |======================================                                |  54%  |                                                                              |=========================================                             |  58%  |                                                                              |============================================                          |  62%  |                                                                              |===============================================                       |  67%  |                                                                              |==================================================                    |  71%  |                                                                              |====================================================                  |  75%  |                                                                              |=======================================================               |  79%  |                                                                              |==========================================================            |  83%  |                                                                              |=============================================================         |  88%  |                                                                              |================================================================      |  92%  |                                                                              |===================================================================   |  96%  |                                                                              |======================================================================| 100%
+    #>   |                                                                              |                                                                      |   0%  |                                                                              |====                                                                  |   6%  |                                                                              |========                                                              |  11%  |                                                                              |============                                                          |  17%  |                                                                              |================                                                      |  22%  |                                                                              |===================                                                   |  28%  |                                                                              |=======================                                               |  33%  |                                                                              |===========================                                           |  39%  |                                                                              |===============================                                       |  44%  |                                                                              |===================================                                   |  50%  |                                                                              |=======================================                               |  56%  |                                                                              |===========================================                           |  61%  |                                                                              |===============================================                       |  67%  |                                                                              |===================================================                   |  72%  |                                                                              |======================================================                |  78%  |                                                                              |==========================================================            |  83%  |                                                                              |==============================================================        |  89%  |                                                                              |==================================================================    |  94%  |                                                                              |======================================================================| 100%
 
 ``` r
 (end_time <- Sys.time() - start_time)
 ```
 
-    #> Time difference of 1.212652 mins
+    #> Time difference of 39.73646 secs
 
 This saves us a about a minute for this specific data set. With larger
 datasets and more candidate and racial demographic comparisons, the
@@ -195,6 +195,14 @@ equate a shorter run time. Nonetheless, parallelization can save
 multitudes of the \~4 minutes saved here, especially if you repeat
 function calls for analyses such as a boostrap.
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/para_benchmark_box_nsamples.png" width="100%" />
 
-![](images/para_benchmark_box_nsamples.png)<!-- -->
+## Summary
+
+`eiCompare` provides the option to parallelize operations for iterative
+ei in `ei_iter()`, diagnostic tests in `ei_rxc()`, and geocoding in
+`run_geocoder()`. By setting the parallelization toggle to `TRUE`, as
+well as having the proper set up with more than 4 cores and more than 16
+GB of RAM, the user should be able to run these operations multitudes
+faster.
 
