@@ -3,8 +3,8 @@ title: "Bayesian Improved Surname Geocoding (BISG)"
 author: "null"
 date: "8/5/2020"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 This vignette demonstrates how to perform Bayesian Improved Surname Geocoding when the race/ethncity of individuals are unknown within a dataset.
 
@@ -12,16 +12,17 @@ This vignette demonstrates how to perform Bayesian Improved Surname Geocoding wh
 
 Bayesian Improved Surname Geocoding (BISG) is a method that applies the Bayes Rule/Theorem to predict the race/ethnicity of an individual using the individual's surname and geocoded location [Elliott et. al 2008, Elliot et al. 2009, Imai and Khanna 2016]. 
 
-Specifically, BISG first calculates the prior probability of *i* individual being of a ceratin *r* racial group given their *s* surname, or p(r~i~|s~i~). The prior probability created from the surname is updated using Bayes Theorem using the probability of the *i* individual *r* race given their *g* geographic location. The following equation describes how BISG calculates race/ethnicity of individuals when race/ethncicty is unknown using Bayes Theorem:
+Specifically, BISG first calculates the prior probability of **i** individual being of a ceratin **r** racial group given their **s** surname, or p(r<sub>i<sub>|s<sub>i<sub>). The prior probability created from the surname is then updated with the probability of the **i** individual living in a **g** geographic location belonging to a *r* racial group, or p(g<sub>i<sub>|r<sub>i<sub>). The following equation describes how BISG calculates race/ethnicity of individuals using Bayes Theorem, given the surname and geographic location, and specifically when race/ethncicty is unknown :
+      
 
-      ![BISG Equation for Predicting Race/Ethnicity.](/github/eiCompare/vignettes/bisg_equation.png)
+      ![BISG Equation for Predicting Race/Ethnicity.]/github/eiCompare/vignettes/bisg_equation.PNG
 
 In R, the package that performs BISG is called, WRU: Who Are You `wru` [cite WRU package]. This vignette will walk you through how to prepare your geocoded voter file for performing BISG by stepping you throught the processing of cleaning your voter file, prepping voter data for running the BISG, and finally, performing BISG to obtain racial/ethnic probailities of individuals in a voter file.
 
 ## *Performing BISG on your data*
-The first step in performing BISG is to geocode your voter file addresses. For information on geocoding, visit the Geocoding Vignette. 
+We will perform BISG using the previous Gwinnett and Fulton county voter registration data called `gwin_fulton_5k.csv` that was geocoded in the **eiCompare: Geocoding vignette**. 
 
-In this tutorial, we will be using the East Ramapo, New York voter file called, **voter_file_geocoded**, that consists of indivduals registering to vote during the year of 2016. 
+The first step in performing BISG is to geocode your voter file addresses. For information on geocoding, visit the Geocoding Vignette. 
 
 Let's begin by loading your geocoded voter data into R/RStudio.
 
@@ -33,23 +34,46 @@ Load the R packages needed to perform BISG. If you have not already downloaded t
 
 suppressMessages(c(
   library(devtools),
-  install.packages("tidyverse"),
   library(tidyverse),
-  install.packages("stringr"),
   library(stringr),
-  install.packages("sf"),
+  library(tigris),
+  library(leaflet),
   library(sf),
-  install.packages("eiCompare"),
   library(eiCompare),
   library(wru),
   library(readr)
 ))
 ```
 
-Load in East Ramapo, NY School District voter registation data.
+```{r}
+# source files
+source("~/github/eiCompare/R/wru_predict_race_wrapper.R")
+source("~/github/eiCompare/R/voter_file_utils.R")
+```
+
+```{r}
+path_census <- "~/shared/georgia/"
+path <- "~/github/eiCompare/data/"
+```
+
+Load in census data, the shape_file and geocoded voter registation data with latitude and longitude coordinates Gwinnett and Fulton .
+
+Make sure to load your census data that details certain geographies (i.e. counties, cities, tracts, blocks, etc.)
+```{r}
+# Load Georgia census data
+census_data <- readRDS(paste(path_census, "georgia_census.rds", sep = ""))
+```
+
+Next, load the state shape file using the sf::st_read() function.
+```{r}
+# Load Georgia block shape file
+shape_file <- blocks(state = "GA", county = c("Gwinnett","Fulton"))
+```
+
+Load geocoded voter file.
 ```{r}
 # Load geocoded voter registration file
-voter_file_geocoded <- read_csv("~/shared/east_ramapo/data/ram17_clean.csv")
+voter_file_geocoded <- read_csv(paste(path, "ga_geo.csv", sep=""))
 ```
 
 Obtain the first six rows of the voter file to check that the file has downloaded properly.
@@ -69,88 +93,41 @@ Check the dimensions (the number of rows and columns) of the voter file.
 # Get the dimensions of the voter file
 dim(voter_file_geocoded)
 ```
-There are 14310 voters (or observations) and 14 columns in the voter file.
-
-Make sure to load your census data that details certain geographies (i.e. counties, cities, tracts, blocks, etc.)
-```{r}
-# Load New York census data
-load("~/shared/east_ramapo/data/ny_census2.RData")
-census_data <- ny_3
-```
-
-Next, load the state shape file using the sf::st_read() function.
-```{r}
-# Load New York block shape file
-ny_shape <- st_read("~/shared/east_ramapo/data/tl_2014_36_tabblock10.shp")
-```
+There are 4440 voters (or observations) and 45 columns in the voter file.
 
 
 ### Step 2: De-duplicate the voter file.
 
-The next step involves removing duplicate voter IDs from the voter file, using the `dedupe_voter_file` function. Check the column name for the unique identifier assigned to each voter the voter file. For the East Ramapo voter file we are using, voter_id is the column named `id`.
+The next step involves removing duplicate voter IDs from the voter file, using the `dedupe_voter_file` function. 
+```{r}
+# Rename registration_id to voter_id
+names(voter_file_geocoded)[names(voter_file_geocoded) == "registration_number"] <- "voter_id"
+
+# Separate latitude and longitude into columns
+voter_file_geocoded <- voter_file_geocoded %>%
+  extract(geometry, c("lon", "lat"), "\\((.*), (.*)\\)", convert = TRUE)
+```
+
+```{r}
+# Check column names for lat and lon columns
+names(voter_file_geocoded)
+```
 
 ```{r}
 # Remove duplicate voter IDs (the unique identifier for each voter)
-voter_file_geocoded <- dedupe_voter_file(voter_file = voter_file_geocoded, voter_id = "voter_id")
+voter_file_dedupe <- dedupe_voter_file(voter_file = voter_file_geocoded, voter_id = "voter_id")
 
 # Check new dimensions of voter file after removing duplicate voter IDs
-dim(voter_file_geocoded)
-```
-There are no duplicate voter IDs in the dataset for the East Ramapo school district data set.
-
-### Step 3: Merge voter file and shape files. This function may take a minute to complete.
-```{r}
-# Load shape file
-voter_shape_merged <- merge_voter_file_to_shape(
-  voter_file = voter_file_geocoded,
-  shape_file = ny_shape,
-  crs = "+proj=longlat +ellps=GRS80",
-  coords = c("lon", "lat"),
-  voter_id = "voter_id"
-)
-
-# Check first 6 rows of merged voter file.
-head(voter_shape_merged, 6)
-```
-```{r}
-# Obtain dimensions of merged file.
-dim(voter_shape_merged)
+dim(voter_file_dedupe)
+names(voter_file_dedupe)
 ```
 
-```{r}
-# Get column names of merged file.
-names(voter_shape_merged)
-```
-
-
-### Step 4: Extracting necessary columns from the voter file to perform BISG
-The voter file contains lots of information about the voter. However, all information is not needed and some columns like voter ID and state.
-
-```{r}
-voter_file_to_bisg <- tidy_voter_file_wru(
-  voter_file = voter_shape_merged,
-  voter_id = "voter_id",
-  surname = "last_name",
-  state = "STATEFP10",
-  county = "COUNTYFP10",
-  tract = "TRACTCE10",
-  block = "BLOCKCE10"
-)
-
-# Check the first 6 rows of the voter_file_to_bisg
-head(voter_file_to_bisg, 6)
-```
-```{r}
-dim(voter_file_to_bisg)
-
-# Get column names for the voter file that is now prepped to perform BISG.
-names(voter_file_to_bisg)
-```
+There are no duplicate voter IDs in the dataset.
 
 ### Step 5: Perform BISG and obtain the predicted race/ethnicity of each voter.
 ```{r}
 # Convert the voter_shaped_merged file into a data frame for performing BISG.
-voter_file_complete <- as.data.frame(voter_shape_merged)
+voter_file_complete <- as.data.frame(voter_file_dedupe)
 class(voter_file_complete)
 ```
 
@@ -161,7 +138,7 @@ bisg_file <- eiCompare::wru_predict_race_wrapper(
   census_data = census_data,
   voter_id = "voter_id",
   surname = "last_name",
-  state = "NY",
+  state = "GA",
   county = "COUNTYFP10",
   tract = "TRACTCE10",
   block = "BLOCKCE10",
@@ -175,19 +152,79 @@ bisg_file <- eiCompare::wru_predict_race_wrapper(
   return_geocode_flag = TRUE,
   verbose = TRUE
 )
-summary(bisg_file$bisg)
 ```
-The BISG voter data.frame is now split into two tables `bisg_file$voter_file` and `bisg$bisg`. The racial proportions for every indidivual given their last name and location is generated and can now be used to perform ecological inference using eiCompare.
+
+```{r}
+#Check the object for BISG output
+head(bisg_file$bisg)
+
+#Assign BISG list data frame, bisg$bisg, to bisg_tbl
+bisg_tbl <-bisg_file$bisg
+
+```
+
+```{r}
+# Save file as a .csv
+write_csv(bisg_tbl, paste(path, "ga_geo_output.csv"))
+```
 
 
-## Summarizing and Plotting BISG output
-
-### Scatterplot
-
-
-
-### Voter Turnout
+## Summarizing BISG output
+```{r}
+summary(bisg_tbl)
+```
 
 
+```{r}
+# Obtain aggregate values for the BISG results by county
+bisg_agg <- precinct_agg_combine(voter_file = bisg_tbl,
+                                        group_col = "county",
+                                        race_cols = c("pre.whi", "pred.bla", "pred.his", "pred.asi", "pred.oth"),
+                                        race_keys = c("White", "Black", "Hispanic", "Asian", "Other"),
+                                        include_total = FALSE)
+
+bisg_agg
+
+```
+
+```{r}
+#Assign values to county names for barplot
+bisg_agg$county[bisg_agg$county == "121"] <- "Fulton"
+bisg_agg$county[bisg_agg$county == "135"] <- "Gwinnett"
+
+bisg_agg
+```
+
+### Barplot of BISG results
+```{r}
+bisg_bar <- bisg_agg %>%
+    gather("Type", "Value",-county) %>%
+    ggplot(aes(county, Value, fill = Type)) +
+    geom_bar(position = "dodge", stat = "identity") +
+    labs(title="BISG Predictions for Fulton and Gwinnett Counties", y="Proportion", x="Counties") +
+    theme_bw()
+
+bisg_bar + scale_color_discrete(name="Race/Ethnicity Proportions")
+```
 
 ### Choropleth Map
+Finally, we will map the BISG data onto choropleth maps.
+
+```{r}
+names(bisg_tbl)
+```
+
+```{r}
+bisg_df <-bisg_tbl %>%
+  select(block, pred.whi, pred.bla, pred.his, pred.asi, pred.oth)
+
+bisg_df
+```
+
+```{r}
+names(bisg_df)[names(bisg_df)=="block"] <- "BLOCKCE10"
+bisg_sf <- left_join(shape_file, bisg_df, by="BLOCKCE10")
+
+ggplot(data = bisg_sf) +
+  geom_sf(aes(fill = 'pred.bla'))
+```
