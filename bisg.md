@@ -1,9 +1,6 @@
 ---
 title: "Bayesian Improved Surname Geocoding (BISG)"
-author: "null"
-date: "8/5/2020"
 output:
-  pdf_document: default
   html_document: default
 ---
 This vignette demonstrates how to perform Bayesian Improved Surname Geocoding when the race/ethncity of individuals are unknown within a dataset.
