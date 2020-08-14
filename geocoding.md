@@ -2,11 +2,7 @@
 layout: page
 title: 'Geocoding: Voter Addresses'
 ---
----
-output:
-  html_document: default
-  pdf_document: default
----
+
 In this vignette, we will walk-through how to geocode a dataset that includes addresses used to apply the BISG method for estimating the race/ethnicity of registered voters.
 
 
