@@ -1,10 +1,6 @@
 ---
+layout: page
 title: 'Geocoding: Voter Addresses'
-author: "null"
-date: "8/4/2020"
-output:
-  pdf_document: default
-  html_document: default
 ---
 
 In this vignette, we will walk-through how to geocode a dataset that includes addresses in order to estimate race using BISG.
