@@ -3,12 +3,12 @@ layout: page
 title: 'Geocoding: Voter Addresses'
 ---
 
-In this vignette, we will walk-through how to geocode a dataset that includes addresses used to apply the BISG method for estimating the race/ethnicity of registered voters.
+In this vignette, we will walk-through how to geocode a dataset.  This step is particulaly important for performing Bayesian Improved Surname Geocoding which estimates the race/ethnicity of the voters. 
 
 
 ## What is Geocoding?
 
-One of the first steps to performing ecological inference using eiCompare is geocoding your voter file addresses in order to perform Bayesian Improved Surname Geocoding (BISG).  Geocoding is the process of using an address or place of location to find geoographic coordinates (i.e. latitude/longitude) of that location on a map. In relation to performing BISG, the values of the geographic coordinates are compared to other census data containing self-reported race and ethnicity to determine the likelihood of an individual living in an ecological unit area (i.e. county, block, tract) being of a certain race given their address. This probability is then used to update a prior probability in the BISG analysis. For more information on BISG, please refer to the BISG vignette. 
+Geocoding is the process of using an address or place of location to find geoographic coordinates (i.e. latitude/longitude) of that location on a map. In relation to performing BISG, the values of the geographic coordinates are compared to other census data containing self-reported race and ethnicity to determine the likelihood of an individual living in an ecological unit area (i.e. county, block, tract) being of a certain race given their address. This probability is then used to update a prior probability in the BISG analysis. For more information on BISG, please refer to the BISG vignette. 
 
 Below are some steps to help you walk through the process of performing geocoding on your voter file. 
 
