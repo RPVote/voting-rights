@@ -1,7 +1,5 @@
 ---
 title: "Bayesian Improved Surname Geocoding (BISG)"
-author: "null"
-date: "8/5/2020"
 output:
   html_document: default
   pdf_document: default
