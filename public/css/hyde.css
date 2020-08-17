@@ -102,13 +102,13 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
-.dropdown-container {
+div.dropdown-container {
   display: none;
   background-color: #202020;
   padding-left: 14px;
 }
 
-.dropdown-btn {
+button.dropdown-btn {
   color: rgba(255,255,255,.5);
   background-color: #202020;
   border: 0;
