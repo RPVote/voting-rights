@@ -1,6 +1,6 @@
 ---
 layout: page
-title: eiCompare: Ecological Inference
+title: eiCompare&#58; Ecological Inference
 ---
 
 This vignette illustrates how we can use the Ecological Inference (EI)
