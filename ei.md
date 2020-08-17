@@ -1,6 +1,6 @@
 ---
 layout: page
-title: eiCompare; Ecological Inference
+title: eiCompare: Ecological Inference
 ---
 
 This vignette illustrates how we can use the Ecological Inference (EI)
@@ -209,7 +209,7 @@ plot_bivariate(
 )
 ```
 
-<img src="images/ei_files/ei_summary_plot.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" style="display: block; margin: auto;" />
+![bivariate_plot](images/ei_files/ei_bivariate_plot.png)
 
 The `plot_bivariate()` function returns a `ggplot2` object plotting the relationships between each candidate's precinct-level vote share and the precinct-level turnout share of each race group. These plots can tell us a lot about what to expect from the EI analysese to come. In particular, we can observe the following two trends.
 
@@ -340,7 +340,7 @@ Finally, we can plot the results of the two methods using the eiCompare `plot()`
 plot(ei_results_iter, ei_results_rxc)
 ```
 
-<img src="images/ei_files/ei_summary_plot.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" style="display: block; margin: auto;" />
+![summary_plot](images/ei_files/ei_summary_plot.png)
 
 This plot shows the results of both ecological inference methods. The plot presents one panel for each race group. Each panel has a row for each candidate. The x-axis indicates the proportion of the each race group's vote that is estimated to have gone to each candidate in the election. Lastly, the different colored points represent results from different methods, listed in the legend below the plot. 
 
