@@ -104,8 +104,17 @@ a.sidebar-nav-item:focus {
 
 .dropdown-container {
   display: none;
-  background-color: #262626;
-  padding-left: 8px;
+  background-color: #202020;
+  padding-left: 14px;
+}
+
+.dropdown-btn {
+  color: rgba(255,255,255,.5);
+  background-color: #202020;
+  border: 0;
+  color: #fff;
+  padding-left: 0;
+  font-size: 20px;
 }
 
 /* Sticky sidebar
