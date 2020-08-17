@@ -1,15 +1,11 @@
 ---
-title: "eiCompare: Ecological Inference"
-output: rmarkdown::github_document
-vignette: >
-  %\VignetteIndexEntry{ei}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+layout: page
+title: eiCompare; Ecological Inference
 ---
 
-This vignette illustrates how we can use the Ecological Inference (EI) tools 
-within `eiCompare` to learn about the voting behavior of different groups of 
-voters. 
+This vignette illustrates how we can use the Ecological Inference (EI)
+tools within `eiCompare` to learn about the voting behavior of different
+groups of voters.
 
 ## The ecological inference problem
 
@@ -215,7 +211,6 @@ plot_bivariate(
 
 <img src="images/ei_files/ei_summary_plot.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" style="display: block; margin: auto;" />
 
-
 The `plot_bivariate()` function returns a `ggplot2` object plotting the relationships between each candidate's precinct-level vote share and the precinct-level turnout share of each race group. These plots can tell us a lot about what to expect from the EI analysese to come. In particular, we can observe the following two trends.
 
 1. We observe what looks like racially polarized voting in the top left corner of this figure. The panel in the upper left corner shows that as the proportion of white voters in a precinct rises, so does the proportion of votes for Brian Kemp. The plot just below shows that the opposite is true for Stacey Abrams. Meanwhile, the second column reveals the opposite pattern for black voters. This is a sign that racially polarized voting might be going on in this election. We can use EI to back this up statistically.
@@ -245,9 +240,6 @@ These basic descriptive checks help us understand our data and give us a sense o
 
 We can run both methods with their respective functions. They take some time to run because they both compute point estimates by sampling from a distribution. 
 
-First, we conduct iterative EI using `ei_iter()`.
-
-
 ```r
 ei_results_iter <- ei_iter(
   data = gwinnett_ei,
@@ -258,6 +250,7 @@ ei_results_iter <- ei_iter(
 )
 
 summary(ei_results_iter)
+
 #> $white
 #>        mean_Iter se_Iter ci_95_lower_Iter ci_95_upper_Iter
 #> kemp       86.88    0.37            86.18            87.53
@@ -283,7 +276,9 @@ summary(ei_results_iter)
 #> metz        3.93    0.18             3.48             4.28
 ```
 
-Notice that the `name` field is used to give a name to the results object. The name entered here is what differentiates results objects from each other when they are summarized or plotted together.  Next, we conduct RxC EI using `ei_rxc()`. This function uses a Markov Chain Monte Carlo (MCMC) algorithm to compute estimates. In practice, to ensure robust results, users should use at least the default number of samples (probably more), and check the diagnostics of the MCMC chain to ensure that everything worked correctly.  
+Notice that the `name` field is used to give a name to the results object. The name entered here is what differentiates results objects from each other when they are summarized or plotted together.  
+
+Next, we conduct RxC EI using `ei_rxc()`. This function uses a Markov Chain Monte Carlo (MCMC) algorithm to compute estimates. In practice, to ensure robust results, users should use at least the default number of samples (probably more), and check the diagnostics of the MCMC chain to ensure that everything worked correctly.  
 
 ```r
 ei_results_rxc <- ei_rxc(

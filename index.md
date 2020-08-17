@@ -22,20 +22,6 @@ that their utilization can expand.
 
 **DSSG Fellows:** Juandalyn Burke, Ari Decter-Frain, Hikari Murayama, Pratik Sachdeva
 
-# Abstract or executive summary
+# Abstract
 
-Section 2 of the Voting Rights Act (VRA) allows voters to challenge district
-boundaries if they believe gerrymandering has been used to dilute their vote and
-block them from getting candidates of choice for their community elected. To win
-a VRA lawsuit, plaintiffs must prove that voting patterns in their community are
-"racially polarized" with Whites and minorities voting in opposite directions
-for different candidates. However, most states do not collect racial data on
-voters, and the voter's ballot is secret. To analyze voting patterns, social
-scientists use a statistical method called Ecological Inference (EI) to
-determine how different groups vote. But this method relies on imprecise census
-data and often creates biased estimates of voting patterns. Recently a new
-methodology has been developed for estimating voters’ race and ethnicity, which
-offers great promise for improving voting estimates and being a helpful tool for
-upholding minority voting rights.
-
-This project uses the existing eiCompare R software package (Collingwood et al. 2016) to update and modernize ecological inference (EI) analysis to be used in voting rights and redistricting efforts. In particular, we propose numerous methodological, programming, and statistical advancements to the EI models in eiCompare to allow for a more accurate and precise model to capture racial voting patterns. In particular we will incorporate Bayesian Improved Surname Geocoding (BISG, see Imai and Khanna 2016) to analyze the surname and address of voters to estimate probabilities of their race or ethnicity, which can then be used in EI models. We will also troubleshoot and address bugs in the various EI model code to ensure that accurate estimates of voter preferences are being calculated and can be better used by state and federal courts when evaluating voting rights claims.
+The Voting Rights Act (VRA) of 1965 was established to provide every citizen the right to vote in a fair electoral process. Specifically, the VRA prohibits discriminatory voting practices such as gerrymandering, racially polarized voting, and voter dilution from being enacted on racial and language minorities. Each of these discriminatory practices can aid in bloc-ing minority voters from electing a candidate of their choice that is more representative of their own communities. However, proving that racially polarized voting and voting dilution exist is a challenge due to the need to know the racial identity of the voter, which is not commonly present in voter records. Our work aimed to estimate the racial identities of voters and use the methods of ecological inference to improve upon an R package tool called, eiCompare. eiCompare uses aggregate data to infer individual characteristics and compares three methods of ecological inference: King’s ecological inference, iterative ecological inference and RxC, to detect racially polarized voting and voter dilution. We added several features to the tool including: geocoding capabilities, improved functionality for estimating the racial identities of voters, provided additional visualization to ecological inference results, utilized parallel processing to make the package more efficient to run and built-in the ability to conduct performance analyses. With the new improvements of the eiCompare package, we believe that the package may be more accessible to cases involving proposed racially polarized voting and voter dilution.
