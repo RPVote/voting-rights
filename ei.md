@@ -27,7 +27,6 @@ information for each election precinct in Gwinnett County, Georgia:
 suppressPackageStartupMessages({
   library(eiCompare)
   library(dplyr)
-  library(doParallel)
 })
 
 data("gwinnett")
