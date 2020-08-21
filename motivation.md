@@ -2,9 +2,8 @@
 layout: page
 title: Motivation
 ---
-## Background
 
-In the spring of 2020, the NAACP won a landmark voting rights case in the East
+In the spring of 2020, the NAACP won a landmark [voting rights case](https://forward.com/news/breaking-news/447322/east-ramapo-judge-rules-violation/) in the East
 Ramapo School District of Rockmount County, New York by convincing the judge
 that precinct boundaries drawn for school board elections substantially diluted
 the Black and Latino minority vote. Vote dilution violates Section 2 of the
@@ -19,15 +18,14 @@ In this DSSG project, we build on Dr. Barreto and Dr. Collingwood's initial
 version of `eiCompare`, software in the form of an `R` package that enables
 anyone in the world to measure vote dilution using the same tools that were used
 in the East Ramapo case (Collingwood et al., 2016). The goal of this project is
-to expand the software's functionality, make it more statistically sound and
-reliable, and make it accessible to everyone so that groups and organizations
+to expand the software's functionality, incorporate additional statistically rigorous tests, and make it accessible to everyone so that groups and organizations
 throughout the country can use it to fight for their electoral rights.
 
 ![Image 1. Decelle (2017) "Students of the East Ramapo School District hold a
 sign during the One Voice United Rally in Albany". Retrieved July 7, 2020 from
 The Atlantic website:
 https://www.theatlantic.com/education/archive/2017/11/another-blow-to-one-of-americas-most-controversial-school-board/546227/
-.](images/eastramapo_schooldistrict_rally_theatlantic.jpg)
+.](images/eastramapo_schooldistrict_rally_theatlantic.png)
 
 ### The legal context
 
@@ -93,12 +91,14 @@ statistical techniques. Some of the most important methods are the following:
   one](bisg.md) on BISG itself.
 
 * **Performance Analysis:** `eiCompare` also contains tools to analyze maps and
-  predict whether the maps with 'perform', that is, enable minority voters to
+  predict whether the maps will 'perform', that is, enable minority voters to
   elect their preferred candidates. Performance analysis uses BISG as well, in
   combination with more advanced spatial methods. To learn more about it, see
   [this tutorial](performance_analysis.md) that walks through an application of
   performance analysis to assess real maps that proposed as part of the East
   Ramapo case.
+
+These tools helped the NAACP win the East Ramapo School Board case. We envision them being applied in future voting rights cases throughout the United States, particularly leading up to widespread 2021 redistricting.
 
 ## Project Goals
 

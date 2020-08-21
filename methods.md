@@ -71,9 +71,11 @@ Along the pipeline of obtaining results using `eiCompare`, it is necessary to en
 
 ## Our contribution:
 
-  Dr. Matt Baretto, Dr. Loren Collingwood, and their co-authors developed v1.0 of `eiCompare` as a  'minimum viable product' while conducting analyses for the East Ramapo court case. This summer we worked to revamp the package and demonstrate it's capabilities through a different applications.
+  Dr. Matt Baretto, Dr. Loren Collingwood, and their co-authors developed `eiCompare` as a  'minimum viable product' while conducting analyses for the East Ramapo court case (view the original package [here](https://github.com/lorenc5/eiCompare)). This summer we worked to revamp the package and demonstrate it's capabilities through a different applications.
 
 ### Package improvements
+
+View the new package repository [here](https://github.com/RPVote/eiCompare). A short list of the new additions to the package:
 
 - We added new functionality, including:
 	- Performance analysis
@@ -94,4 +96,4 @@ Beyond upgrading the package, we also applied these tools in additional research
 
 - **Geocode comparison:** We conducted a comparative performance evaluation to identify the best geocoding API for geocoding voter files. We tested Geocodio, Opencage, Nominatum and the Census API to see which was best suited to geocoding voter file address data. Our results favored the free Census API. We then built functions for accessing the Census API and included them in `eiCompare`.
 
-- **Statistical benchmarking**. We used data from the state of Georgia to benchmarked eiCompare’s race estimatesion against voters’ self-reported race., We alsoand benchmarked eiCompare’sour estimates of racially polarized voting against measures from exit polls. Moving forward, we plan to develop these benchmarks into an academic publication that can inform the courts’ decisions about the validity of eiCompare’s tools.
+- **Statistical benchmarking**. We used data from the state of Georgia to benchmark eiCompare’s race estimates against voters’ self-reported race. We also benchmarked eiCompare’s  estimates of racially polarized voting against measures from exit polls. Moving forward, we plan to develop these benchmarks into an academic publication that can inform the courts’ decisions about the validity of eiCompare’s tools.
