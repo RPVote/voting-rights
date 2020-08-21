@@ -21,11 +21,7 @@ in the East Ramapo case (Collingwood et al., 2016). The goal of this project is
 to expand the software's functionality, incorporate additional statistically rigorous tests, and make it accessible to everyone so that groups and organizations
 throughout the country can use it to fight for their electoral rights.
 
-![Image 1. Decelle (2017) "Students of the East Ramapo School District hold a
-sign during the One Voice United Rally in Albany". Retrieved July 7, 2020 from
-The Atlantic website:
-https://www.theatlantic.com/education/archive/2017/11/another-blow-to-one-of-americas-most-controversial-school-board/546227/
-.](images/eastramapo_schooldistrict_rally_theatlantic.PNG)
+!["Image 1. Decelle (2017) "Students of the East Ramapo School District hold a sign during the One Voice United Rally in Albany". Retrieved July 7, 2020 from The Atlantic website: https:/www.theatlantic.com/education/archive/2017/11/another-blow-to-one-of-americas-most-controversial-school-board/546227/."](images/eastramapo_schooldistrict_rally_theatlantic.png)
 
 ### The legal context
 
