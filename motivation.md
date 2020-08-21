@@ -25,7 +25,7 @@ throughout the country can use it to fight for their electoral rights.
 sign during the One Voice United Rally in Albany". Retrieved July 7, 2020 from
 The Atlantic website:
 https://www.theatlantic.com/education/archive/2017/11/another-blow-to-one-of-americas-most-controversial-school-board/546227/
-.](images/eastramapo_schooldistrict_rally_theatlantic.png)
+.](images/eastramapo_schooldistrict_rally_theatlantic.PNG)
 
 ### The legal context
 
