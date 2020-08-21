@@ -16,7 +16,7 @@ within eiCompare. Functions that include this option are:
 Prior to attempting to run these functions in parallel, it is advised
 you check your computer or server for the following properites:
 
-  - You should more than 4 physical cores
+  - You should have more than 4 physical cores
 
   - You should have at least 16 GB of RAM
 
