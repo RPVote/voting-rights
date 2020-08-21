@@ -75,10 +75,10 @@ statistical techniques. Some of the most important methods are the following:
   for estimating the behavior of individuals using data on aggregate behavior
   (Rosen et al., 2001; King, 1997).  In the context of elections, it has been
   applied in academic and legal settings to estimate the proportion of voters
-  identifying with a particular race who voted for a particular candidate (*East
-  Ramapo Cite Here*, Barreto et al., 2019). To see how eiCompare applies these
-  techniques, see [this tutorial](ei.md), with more advanced
-  demonstrations [here](parallel_processing.md) and [here](visualizations.md).
+  identifying with a particular race who voted for a particular candidate 
+  (Barreto et al., 2019). To see how eiCompare applies these techniques, see 
+  [this tutorial](ei.md), with more advanced demonstrations [here]
+  (parallel_processing.md) and [here](visualizations.md).
 
 * **Bayesian Improved Surname Geocoding (BISG):** To execute EI we need measures
   of how many people identifying with each racial group actually turned out to
