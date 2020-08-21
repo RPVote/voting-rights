@@ -36,7 +36,8 @@ file to the new districts and determine the turnout by race, per
 district. This includes the following steps:
 
 1.  **Geocoding:** Geocode latitude and longitude of voters in the file
-    using their address. We do not focus on this step in this vignette.
+    using their address. See the [geocoding vignette](geocoding.md) for more
+    details on this procedure.
 2.  **Spatial Join:** Using the geocoded coordinates, map each voter to
     the new districts using a spatial join.
 3.  **Race Estimates:** If race is not recorded on the voter file,
@@ -48,8 +49,7 @@ district. This includes the following steps:
 
 `eiCompare` provides functions to perform steps 2-4 of the analysis, as
 well as a function that completes the entire pipeline. Note that
-Gecoding (step 1) must be performed separately (`eiCompare` provides
-tools to aid in geocoding: see the Geocoding vignette). In the following
+Gecoding (step 1) must be performed separately. In the following
 section, we walk through each of the steps.
 
 ## Case study: East Ramapo School District
@@ -252,15 +252,14 @@ voter_file_w_ward$block <- c("1016", "3002", "1016", "4001", "2004")
 
 ## Predicting race using BISG
 
-Since New York state does not report race on the voter file, we need to
-estimate it using BISG (see the BISG vignette for more details on this
-approach). Briefly, BISG provides a probabilistic estimate of race by
-combining knowledge of a voter’s location and surname, both of which are
-informative of their race. `eiCompare` has a wrapper function for
-passing a voter file into the BISG function provided by the WRU package.
-To use this function, we’ll load some Census data that was extracted
-using WRU containing information about the racial demographics of
-Rockland County:
+Since New York state does not report race on the voter file, we need to estimate
+it using BISG (see the [BISG vignette](bisg.md) for more details on this
+approach). Briefly, BISG provides a probabilistic estimate of race by combining
+knowledge of a voter’s location and surname, both of which are informative of
+their race. `eiCompare` has a wrapper function for passing a voter file into the
+BISG function provided by the WRU package. To use this function, we’ll load some
+Census data that was extracted using WRU containing information about the racial
+demographics of Rockland County:
 
 ``` r
 # Load Rockland County Census information
