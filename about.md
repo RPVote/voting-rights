@@ -6,6 +6,12 @@ title: About
 ### About
 ![](assets/img/photos/DSSG-voting-equity-team-jpg.jpg)<!---->
 
+[The Data Science for Social Good summer program](https://escience.washington.edu/dssg/) brings together students, stakeholders, and data and domain researchers to work on focused, collaborative projects for societal benefit.
+
+Our team brought together 8 people from around the U.S., see below for who we are and what we do.
+<br>
+
+
 
 #### Fellows
 
