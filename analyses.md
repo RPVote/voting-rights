@@ -4,7 +4,7 @@ title: Statistical Analyses
 ---
 
 The pipeline for detecting vote dilution, highlighted in the
-[Methods](methods.md) page, requires the application of several analysis
+[eiCompare](methods.md) page, requires the application of several analysis
 techniques such as ecological inference (EI), Bayesian Improved Surname
 Geocoding (BISG), and a performance analysis. In this section, we detail these
 analyses, their components, and limitations. Each of these analyses are
@@ -27,14 +27,14 @@ Rights Act violation:
 The datasets we have access to, as described in Methods, provide us information
 about who voted (from the voter file) and which candidates received votes (from
 the election results). Knowing these totals isn’t good enough to meet the
-requirements of the Gingles test - we actually need to know which candidates 
-voters supported in order to determine whether majority voters and minority 
-voters were cohesive blocks supporting different candidates (criteria 2 and 3). 
-By law, the specific candidates chosen by a voter are secret to ensure the 
+requirements of the Gingles test - we actually need to know which candidates
+voters supported in order to determine whether majority voters and minority
+voters were cohesive blocks supporting different candidates (criteria 2 and 3).
+By law, the specific candidates chosen by a voter are secret to ensure the
 voter’s privacy. Thus, we need to infer these quantities from the data.
 
 At first glance, this may seem impossible. For example, consider a toy election
-with white and Black voters choosing between Candidates A and B (Figure 1,
+with White and Black voters choosing between Candidates A and B (Figure 1,
 left). We might know the marginal data – the totals for each row and column, as
 shown – but we don’t know the individual entries in the table (Figure 1:
 question marks). The voters could be split into any number of assortments across
@@ -53,7 +53,7 @@ don’t vote too differently across precincts, we can leverage the statistical
 regularities in voting patterns across the tables to infer what fraction of
 voters support different candidates, across racial groups. This is the
 ecological inference (EI) problem: using patterns in ecological units (in this
-case, precincts) to infer individual-level (voters) behavior.
+case, precincts) to infer (aggregated) individual-level (voters) behavior.
 
 There are a variety of approaches to solve the ecological inference problem.
 These approaches generally assume an underlying statistical model describing
@@ -82,14 +82,18 @@ and location to obtain a probabilistic estimate of race.</p>
 
 BISG relies on the observation that both a person’s surname and location are
 informative about their race (Elliott et al., 2009). It crucially relies on the
-Census Bureau’s comprehensive database of surnames and tabulation of racial
-groups in geographic blocks across the United States. To apply BISG, we first
-assume that a person’s surname provides prior knowledge of what their race might
-be (e.g., a person with a surname of “Jackson” has a 53% chance of being black:
-Figure 2). Next, we use that voter’s location to “update” the probability to a
-posterior probability of race using Bayes’ Theorem. For example, if the person
-with the surname “Jackson” lives in an area that is predominantly black, that
-greatly increases the probability that they are black.
+Census Bureau’s comprehensive [database of
+surnames](https://www.census.gov/topics/population/genealogy/data/2010_surnames.html)
+and tabulation of [racial groups in geographic
+blocks](https://www.census.gov/data/datasets/2010/dec/summary-file-1.html)
+across the United States. To apply BISG, we first assume that a person’s surname
+provides prior knowledge of what their race might be (e.g., a person with a
+surname of “Jackson” has a 53% chance of being black: Figure 2). Next, we use
+that voter’s location to“update” the probability to a posterior probability of
+race using Bayes’ Theorem. For example, if the person with the surname “Jackson”
+lives in a Census block with self-reported race of constituents being
+predominantly black (in 2010), that greatly increases the probability that they
+are black.
 
 In practice, we utilize the package WRU (“Who Are You”) provided by Imai and
 Khanna (2016) to calculate the BISG. This package also allows updating the
@@ -101,8 +105,8 @@ See the [BISG vignette](bisg.md) for more details.
 
 ## Performance Analyses
 
-The ultimate outcome from voting rights litigation is to throw out a districting
-map that does not allow adequate representation for minority groups, prompting
+The ultimate outcome from voting rights litigation is to produce a districting
+map that allows adequate representation for minority groups, prompting
 the need for a new districting map. Thus, we need to assess whether the new
 districting map provides sufficient representation for minority groups. To do
 so, we can look at past elections, and observe how candidates would perform
@@ -125,4 +129,4 @@ details on how to use `eiCompare` to run a performance analysis.
 
 3. Imai, K., & Khanna, K. (2016). Improving ecological inference by predicting individual ethnicity from voter registration records. Political Analysis, 263-272.
 
-4. Rosen, O., Jiang, W., King, G., Tanner, M.A. (2001). Bayesian and frequentist inference for ecological inference: the R x C case. Statistica Neerlandica, 55, 2, p. 134-156. 
+4. Rosen, O., Jiang, W., King, G., Tanner, M.A. (2001). Bayesian and frequentist inference for ecological inference: the R x C case. Statistica Neerlandica, 55, 2, p. 134-156.
