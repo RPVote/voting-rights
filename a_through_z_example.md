@@ -20,8 +20,32 @@ suppressMessages({
 ## Geocoding
 
 ``` r
-# Import the voter file (called ram_vf)
+# Import the voter file (as ram_vf)
 load("~/shared/east_ramapo/data/ram_geocode.RData")
+```
+
+``` r
+# Drop duplicated Records #
+ram_vf <- ram_vf[!duplicated(ram_vf$Voter_ID),]
+dim(ram)
+```
+
+```{r}
+ram_vf <- run_geocoder(voter_file= ram_vf,
+                       geocoder = "census",
+                       parallel = TRUE,
+                       voter_id = "VOTER_ID",
+                       street = "Address",
+                       city = "precinct_name",
+                       state = "state",
+                       zipcode = NULL,
+                       country = NULL,
+                       census_return = NULL,
+                       census_benchmark = "Public_AR_Current",
+                       census_vintage = 4,
+                       census_output = "single",
+                       census_class = "sf",
+                       opencage_key = NULL)
 ```
 
 ## BISG
