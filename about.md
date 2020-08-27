@@ -112,9 +112,9 @@ If you have any feedback or questions feel free to reach out to us:
 
 Juandalyn Burke (jcburke at uw . edu)
 
-Ari Decter-Frain (agd65 at cornell . edu)
+Ari Decter-Frain (agd75 at cornell . edu)
 
-Hikari Murayama (hikari_murayama at berkeley . edu)
+Hikari Murayama (hikari _ murayama at berkeley . edu)
 
 Pratik Sachdeva (pratik . sachdeva at berkeely .edu)
 
