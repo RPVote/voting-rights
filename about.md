@@ -107,6 +107,14 @@ Space-based geodesy is entering a new era in which measurements are routine and 
 </div>
 
 
+### Contact Us
+If you have any feedback or questions feel free to reach out to us:
+Juandalyn Burke (jcburke at uw . edu)
+Ari Decter-Frain (agd65 at cornell . edu)
+Hikari Murayama (hikari_murayama at berkeley . edu)
+Pratik Sachdeva (pratik . sachdeva at berkeely .edu)
+
+
 ### Acknowledgements
 
 
