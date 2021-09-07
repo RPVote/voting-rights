@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Geocoding: Voter Addresses
+title: Geocoding Voter Addresses
 ---
 
 In this vignette, we will walk-through how to geocode a dataset that
