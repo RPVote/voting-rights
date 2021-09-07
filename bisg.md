@@ -27,12 +27,13 @@ location, and specifically when race/ethnicity is unknown :
 
 $$Pr(R_i=r\|S_i=s, G_i=g) = \\frac{Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}{\\sum\_{i=1}^n Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}$$
 
-<br />
-<br />
+## 
 
 In R, the `wru` package titled, [WRU: Who Are
 You](https://cran.r-project.org/web/packages/wru/index.html) performs
-BISG. This vignette will walk you through how to prepare your geocoded
+BISG. 
+
+This vignette will walk you through how to prepare your geocoded
 voter file for performing BISG by stepping you through the process of
 cleaning your voter file, prepping voter data for running the BISG, and
 finally, performing BISG to obtain racial/ethnic probailities of
