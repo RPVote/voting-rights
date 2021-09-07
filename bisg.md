@@ -21,11 +21,11 @@ Specifically, BISG first calculates the prior probability of individual *i* bein
 the probability of the individual *i* living in a geographic location
 *g* belonging to a racial group *r*, or
 *P* *r* ( *G* <sub> *i* </sub> =  *g* \| *R* <sub> *i* </sub> =  *r* )
-). The following equation describes how BISG calculates race/ethnicity
+. The following equation describes how BISG calculates race/ethnicity
 of individuals using Bayes Theorem, given the surname and geographic
 location, and specifically when race/ethnicity is unknown :
 
-$$Pr(R_i=r\|S_i=s, G_i=g)= \\frac {Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}{\\sum\_{i=1}^n Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}$$
+$$Pr(R_i=r\|S_i=s, G_i=g) = \\frac{Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}{\\sum\_{i=1}^n Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}$$
 
 In R, the `wru` package titled, [WRU: Who Are
 You](https://cran.r-project.org/web/packages/wru/index.html) performs
