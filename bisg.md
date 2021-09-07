@@ -374,7 +374,7 @@ bisg_bar <- bisg_agg %>%
 bisg_bar + scale_color_discrete(name = "Race/Ethnicity Proportions")
 ```
 
-![](bisg_files/figure-markdown_github/unnamed-chunk-17-1.png)
+![Barplot for BISG](images/bisghistogram.png)
 
 ### Choropleth Map
 
@@ -411,7 +411,7 @@ bisg_sf <- dplyr::left_join(gwin_fulton_shape, bisg_dfsub, by = "BLOCKCE10")
 plot(bisg_sf["pred.bla"], main = "Proportion of Black Voters identified by BISG")
 ```
 
-![Black Voters](images/blackvoters.png)
+![BISG Black Voters](images/bisgblackvoters.png)
 
 #### Plot Map of Proportion of White Voters
 
@@ -419,7 +419,7 @@ plot(bisg_sf["pred.bla"], main = "Proportion of Black Voters identified by BISG"
 plot(bisg_sf["pred.whi"], main = "Proportion of White Voters identified by BISG")
 ```
 
-![White Voters](images/whitevoters.png)
+![BISG White Voters](images/bisgwhitevoters.png)
 
 #### Plot Map of Proportion of Hispanic Voters
 
@@ -427,7 +427,7 @@ plot(bisg_sf["pred.whi"], main = "Proportion of White Voters identified by BISG"
 plot(bisg_sf["pred.his"], main = "Proportion of Hispanic Voters identified by BISG")
 ```
 
-![Hispanic Voters](images/hispanicvoters.png)
+![BISG Hispanic Voters](images/bisghispanicvoters.png)
 
 #### Plot Map of Proportion of Asian Voters
 
@@ -435,7 +435,7 @@ plot(bisg_sf["pred.his"], main = "Proportion of Hispanic Voters identified by BI
 plot(bisg_sf["pred.asi"], main = "Proportion of Asian Voters identified by BISG")
 ```
 
-![Asian Voters](images/asianvoters.png)
+![BISG Asian Voters](images/bisgasianvoters.png)
 
 #### Plot Map of Proportion of Other Voters
 
@@ -443,4 +443,4 @@ plot(bisg_sf["pred.asi"], main = "Proportion of Asian Voters identified by BISG"
 plot(bisg_sf["pred.oth"], main = "Proportion of 'Other' Voters identified by BISG")
 ```
 
-![Other Voters](images/othervoters.png)
+![BISG Other Voters](images/bisgothervoters.png)
