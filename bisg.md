@@ -25,7 +25,7 @@ the probability of the individual *i* living in a geographic location
 of individuals using Bayes Theorem, given the surname and geographic
 location, and specifically when race/ethnicity is unknown :
 
-$$Pr(R_i=r\|S_i=s, G_i=g) = \\frac{Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}{\\sum\_{i=1}^n Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}$$
+`$$Pr(R_i=r\|S_i=s, G_i=g)=\\frac{Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}{\\sum\_{i=1}^n Pr(G_i= g\|R_i =r)Pr(R_i =r \|S_i= s)}$$`
 
 ## 
 
