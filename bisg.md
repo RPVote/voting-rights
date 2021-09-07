@@ -411,7 +411,7 @@ bisg_sf <- dplyr::left_join(gwin_fulton_shape, bisg_dfsub, by = "BLOCKCE10")
 plot(bisg_sf["pred.bla"], main = "Proportion of Black Voters identified by BISG")
 ```
 
-![](bisg_files/figure-markdown_github/unnamed-chunk-20-1.png)
+![Black Voters](images/blackvoters.png)
 
 #### Plot Map of Proportion of White Voters
 
@@ -419,7 +419,7 @@ plot(bisg_sf["pred.bla"], main = "Proportion of Black Voters identified by BISG"
 plot(bisg_sf["pred.whi"], main = "Proportion of White Voters identified by BISG")
 ```
 
-![](bisg_files/figure-markdown_github/unnamed-chunk-21-1.png)
+![White Voters](images/whitevoters.png)
 
 #### Plot Map of Proportion of Hispanic Voters
 
@@ -427,7 +427,7 @@ plot(bisg_sf["pred.whi"], main = "Proportion of White Voters identified by BISG"
 plot(bisg_sf["pred.his"], main = "Proportion of Hispanic Voters identified by BISG")
 ```
 
-![](bisg_files/figure-markdown_github/unnamed-chunk-22-1.png)
+![Hispanic Voters](images/hispanicvoters.png)
 
 #### Plot Map of Proportion of Asian Voters
 
@@ -435,7 +435,7 @@ plot(bisg_sf["pred.his"], main = "Proportion of Hispanic Voters identified by BI
 plot(bisg_sf["pred.asi"], main = "Proportion of Asian Voters identified by BISG")
 ```
 
-![](bisg_files/figure-markdown_github/unnamed-chunk-23-1.png)
+![Asian Voters](images/asianvoters.png)
 
 #### Plot Map of Proportion of Other Voters
 
@@ -443,4 +443,4 @@ plot(bisg_sf["pred.asi"], main = "Proportion of Asian Voters identified by BISG"
 plot(bisg_sf["pred.oth"], main = "Proportion of 'Other' Voters identified by BISG")
 ```
 
-![](bisg_files/figure-markdown_github/unnamed-chunk-24-1.png)
+![Other Voters](images/othervoters.png)
