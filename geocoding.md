@@ -466,7 +466,7 @@ county_shape <- map_shape_file(
 county_shape
 ```
 
-![](geocoding_redo_files/figure-markdown_github/unnamed-chunk-18-1.png)
+![Map shape file](images/mapshapefile_gwinnett_fulton.png)
 
 **We now will look at the block level of Fulton and Gwinnett county.**
 
@@ -492,9 +492,9 @@ gwin_fulton_map
 
     ## [[1]]
 
-![](geocoding_redo_files/figure-markdown_github/unnamed-chunk-21-1.png)
+![Map shape file for counties ](images/mapshapefile_gwinnett_fulton_counties.png)
 
     ## 
     ## [[2]]
 
-![](geocoding_redo_files/figure-markdown_github/unnamed-chunk-21-2.png)
+![Map shape file with points](images/mapshapepoints_gwinnett_fulton.png)
